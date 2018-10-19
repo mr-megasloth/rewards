@@ -1,0 +1,52 @@
+.table {
+    width: 100%;
+
+    &--small {
+        width: 50rem;
+    }
+
+    th {
+        padding: 1rem;
+        background-color: $col-grey-2;
+        color: $col-w;
+        font-weight: 400;
+        font-size: 1.3rem;
+    }
+
+    th,
+    td{
+        text-align: center;
+        font-family: $font-open-sans;
+    }
+
+    td {
+        font-size: 1.1rem;
+        text-align: left;
+        padding: 1rem 2rem;
+        border: solid 1px #eeeeee;
+    }
+
+
+    // &__upload-cell {
+    //     display: flex;        
+    //     align-items: center;
+    //     justify-content: center;
+    // }
+
+    &__btn {
+        display: inline-block;
+        background-color: $col-ter;
+        margin-right: .5rem;
+        padding: .2rem 1rem;
+        color: $col-w;
+        text-transform: uppercase;  
+
+    }
+
+    &__overflow-cell {
+        max-height: 5rem;
+        overflow-y: scroll;
+    }
+    
+    
+} 

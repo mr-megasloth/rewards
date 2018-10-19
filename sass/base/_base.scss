@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+::selection {
+    background-color: $col-pri;
+    color: $col-w;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;   
+}
+
+#dashboard {
+    display: block;
+    margin-bottom: 4rem;
+}
+
+
+
+ 
+ 
+	
+	
+	

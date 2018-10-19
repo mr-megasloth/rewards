@@ -1,0 +1,14 @@
+@keyframes milestone-pulse{
+    0%{
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: .3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: .8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: .3;
+    }
+}

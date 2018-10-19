@@ -1,0 +1,41 @@
+.form {
+    display: inline-block;
+
+    &__group {   
+        margin-bottom: 1.5rem;
+    }
+
+    &__label {
+        width: 100%;
+        display: block;
+        margin-bottom: .5rem;
+        text-align: left;
+    }
+
+    &__input,
+    &__select {
+        font-size: 1.4rem;
+        color: $col-pri;
+
+        width: 37rem;
+        border: solid 1px $col-grey-1; 
+        padding: .9rem 1rem;
+        border-radius: .4rem;
+
+        &:focus {
+            outline: none;
+            border: solid 1px $col-ter;
+        }
+    }
+
+    &__error {
+        margin-top: 1rem;
+        font-size: 12px;
+        color: red;
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+}

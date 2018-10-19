@@ -1,0 +1,16 @@
+.btn {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    border: 0;
+    padding: .8rem 4rem;
+    color:$col-w;
+    background-color: $col-ter;
+    cursor: pointer;
+}
+
+.btn-right {
+    text-align: right;
+}

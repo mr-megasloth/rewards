@@ -1,0 +1,164 @@
+.dash-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &--admin {
+        max-width: 42rem;
+    }
+
+    &__form-group {
+        display: flex;
+        width: 100%;
+
+        &--submit {
+            justify-content: flex-end;
+        }
+
+        &--hide {
+            display: none;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__label {
+        flex: 0 0 22rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+
+        &--admin {
+            flex: 0 0 14rem; 
+        }
+
+        &--top {
+            align-self: flex-start;
+            margin-top: 1rem;
+        }
+    }
+
+    &__select, 
+    &__input {
+        flex-grow: 1;
+        font-size: 1.4rem;
+        padding: .5rem 1rem;
+        border: solid 1px $col-grey-1;
+        background-color: $col-w;
+        border-radius: 3px;
+    }
+
+    &__input {
+        &--hide {
+            display: none;
+        }
+    }
+
+    &__error {
+        font-size: 1.2rem;
+        color: red;   
+        margin: 0 0 2rem 22rem;
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    &__icon {
+        height: 4rem;
+        width: auto;
+    }
+
+    &__current-file {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+    }
+
+    &__submit {
+        background-color: $col-ter;
+        color: $col-w;
+        border: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 1.8rem;
+        font-weight: 300;
+        padding: .5rem 4rem;
+        margin-top: 0;
+        display: block;
+        text-align: center;
+        min-width: 20rem;
+
+        &--default {
+            padding: .5rem 1rem;
+            font-size: 1.4rem;
+        }
+    }
+
+    &__checkbox{
+        margin-left: auto;
+    }
+
+    &__partner-option {
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    &__participants-cont {     
+        max-height: 20rem;
+        overflow-y: scroll;
+        border: solid 1px $col-grey-1;
+        background-color: $col-w;
+        border-radius: 3px;
+        padding: .5rem 1rem;
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    &__participant {
+        display: flex;
+
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__participant-label {
+        margin-right: 2rem;
+        font-size: 1.4rem;
+        color:$col-pri;
+    }
+
+    &__milestone {
+        width: calc(100% - 22rem);
+        margin-left: 22rem;
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: solid 1px $col-grey-1;
+        display: none;
+
+        &--active {
+            display: block;
+        }
+
+        &:first-of-type {
+            padding-top: 3rem;
+        }
+    }
+
+    &__header-img {
+        max-width: 50%;
+        max-height: 30rem;
+        margin-bottom: 2rem;
+    }
+}

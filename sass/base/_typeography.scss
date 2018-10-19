@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'); /*font-family: 'Open Sans', sans-serif;*/
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800'); /*font-family: 'Dosis', sans-serif;*/
+
+
+h1, h2, h3, h4, h5, h6 {
+	  font-family: $font-dosis;
+	  color:$col-pri;
+}
+
+p, a, li, i, label {
+	  font-family:$font-open-sans;
+	  font-size:1.6rem;
+	  line-height: 1;
+	  color: $col-pri;
+}
+
+a {
+	text-decoration: none;
+}
+
+.title {
+	font-size: 2.6rem;
+	font-weight: 400;    
+	
+	&--small {
+		font-size:.5em;
+	}
+}
+
+.sub-title {
+	font-size: 2rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+}
+
+.success {
+	font-size: 2rem;
+	font-weight: 300;
+	color: green;
+	margin-bottom: 2rem;
+}
+
+
+
+
+
+  

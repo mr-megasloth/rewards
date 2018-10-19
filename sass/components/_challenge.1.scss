@@ -1,0 +1,369 @@
+
+.challenge-header {
+    margin-bottom: 5rem;
+    &__img-cont {
+      margin-bottom: 2rem;
+    }
+
+    &__img {
+        max-height: 35rem;
+        width: auto;
+    }
+
+    &__title {
+        font-size: 4rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        line-height: 1.3em;
+    }
+}
+
+
+.challenge{
+    &__table {
+        
+        width: 100%;
+        font-family: $font-open-sans;
+
+        &,
+        & th, 
+        & td {
+            border: solid 1px $col-grey-1;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            &:not(:first-child) {
+                padding: 1rem 2.5rem;
+            }
+
+            &:nth-child(3),
+            &:nth-child(4) {
+                text-align: center;
+            }
+        }
+
+        th {
+            text-align: left;
+            background-color: $col-sec;
+            color: $col-w;
+            font-family: $font-dosis;
+            font-weight: 500;
+            font-size: 2.4rem;
+            border: none;
+        }
+
+        td {
+            font-size: 1.8rem;
+
+            &:first-child {
+                width:17rem;
+                padding: .5rem;
+            }
+            
+            &:nth-child(3),
+            &:nth-child(4) {
+                text-align: center;
+            }
+            
+            &:last-child {
+                text-align: center;
+                width: 10rem;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    i {
+        font-size: 3.5rem;
+        color:$col-ter;
+        transition: all .5s;
+
+        
+        
+    }
+
+    &__target-text {
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+
+    &__icon {
+        max-height: 6rem;
+        width: auto !important;
+        display: block;
+        margin: 0 auto;
+    }
+
+    &__text {
+        text-align: left;
+    }
+
+    &__info {
+        position: relative;
+        display: none;
+    }
+
+    &__info-inner {
+        padding: 1.5rem 2rem;
+    }
+
+    &__sub-title {
+        font-size: 2.2rem;
+        font-weight: 300;
+        font-family: $font-open-sans;
+        margin-bottom: .5rem;
+        
+    }
+
+    &__date-range {
+        font-size: 1.8rem;
+        font-weight: 300;
+        font-family: $font-open-sans;
+        margin-bottom: .7rem;
+    }
+
+    &__milestone {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;    
+    }
+
+    &__goal {
+        &--final {
+            min-width: 25rem;
+        }
+    
+    }
+
+    &__goal-text {
+        font-size:1.8rem;
+        font-weight: 700;
+        margin: 1rem;
+        
+    }
+    
+
+    &__celebration {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 39rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5;
+
+        &--active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #confetti {
+            width: 75% !important;
+        }
+    }
+
+    
+    &__goal {    
+        position: relative;        
+    }
+
+
+    /*If one milestone */
+    &__milestone--1 &__step {
+        background: rgba( $col-sec , .2);
+        flex: 0 0 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        margin-right:2rem;
+        transition: all .5s;
+
+        &--active {
+            background:rgba( $col-sec , 1);
+        }
+    }
+    
+
+    &__milestone--1 &__goal {
+      
+        max-height: 19rem; 
+        
+        img {
+            height: 19rem;
+            width: auto;
+        }
+
+        
+    }
+
+
+
+  /*If two milestones */
+    &__milestone--2 &__step {
+        background: rgba( $col-sec , .2);
+        flex: 0 0 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        margin-right:2rem;
+        transition: all .5s;
+
+        &--active {
+            background:rgba( $col-sec , 1);
+        }
+    }
+
+    &__milestone--2 &__goal {
+
+        &--1 {
+            max-width: 13rem; 
+            margin-right: 2rem;
+        }
+
+        &--2 {
+            max-width: 20rem;
+        }          
+    }
+
+    &__milestone--2 &__celebration--1 {
+        width: 25rem;
+        left: 30%;
+        top: 27%;
+        height: 73%;
+
+       
+    }
+     
+    &__milestone--2 &__celebration--2 {
+        width: 32rem;
+    }
+
+
+    canvas {
+        width:100% !important;
+    }
+  /*If three milestones */
+    &__milestone--3 &__step {
+        background: rgba( $col-sec , .2);
+        flex: 0 0 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        margin-right:2rem;
+        transition: all .5s;
+
+        &--active {
+            background:rgba( $col-sec , 1);
+        }
+    }
+
+    &__milestone--3 &__goal {
+
+        &--1 {
+            max-width: 8rem; 
+            margin-right: 2rem;
+        }
+
+        &--2 {
+            max-width: 13rem;
+        }     
+
+        &--3 {
+            max-width: 20rem;
+        }          
+    }
+
+    &__milestone--3 &__celebration--1 {
+        width: 18rem;
+        left: 19%;
+        top: 34%;
+        height: 52%;
+
+        canvas {
+            width:85% !important;
+        }
+    }
+     
+    &__milestone--3 &__celebration--2 {
+        width: 21rem;
+        left: 42%;
+        top: 26%;
+    
+    }
+
+    &__milestone--3 &__celebration--3 {
+        width: 34rem;
+        height: 100%;
+    }
+
+  /*If three milestones */
+    &__milestone--4 &__step {
+        background: rgba( $col-sec , .2);
+        flex: 0 0 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        margin-right:2rem;
+        transition: all .5s;
+
+        &--active {
+            background:rgba( $col-sec , 1);
+        }
+    }
+
+    &__milestone--4 &__goal {
+
+        &--1 {
+            max-width: 8rem; 
+            margin-right: 2rem;
+        }
+
+        &--2 {
+            max-width: 13rem;
+        }     
+
+        &--3 {
+            max-width: 20rem;
+        }          
+    }
+
+    &__milestone--4 &__celebration--1 {
+        width: 16rem;
+        left: 9%;
+        top: 34%;
+        height: 37%;       
+    }
+     
+    &__milestone--4 &__celebration--2 {
+        width: 19rem;
+        left: 31%;
+        top: 26%;    
+    }
+
+    &__milestone--4 &__celebration--3 {
+        left: 52%;
+        width: 18rem;
+        top: 29%;
+    }
+
+    &__milestone--4 &__celebration--4 {
+        width: 34rem;
+        height: 100%;
+    }
+
+
+
+
+
+    
+
+   
+        
+   
+}
