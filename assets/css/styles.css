@@ -360,6 +360,9 @@ a {
   .challenge-table__head-item--btn-cont, .challenge-table__preview-item--btn-cont {
     flex: 0 0 6.6rem; }
 
+.challenge--preview-page {
+  padding-top: 6rem; }
+
 .challenge__preview {
   display: flex;
   border-bottom: solid 1px #c3c2c2;
