@@ -78,7 +78,6 @@
                     <p class="form__error form__error--password">The password you entered was incorrect</p>
                 </form>
             </div>
-        </section>
-      
+        </section>      
     </main>
 <?php include "includes/footer.php"; ?>

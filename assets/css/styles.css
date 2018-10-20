@@ -251,9 +251,14 @@ a {
     margin-top: 1rem;
     font-size: 12px;
     color: red;
-    display: none; }
+    display: none;
+    line-height: 1.4em; }
     .form__error--active {
       display: block; }
+  .form__error-link {
+    font-size: 12px;
+    color: red;
+    text-decoration: underline; }
 
 .country-select {
   position: relative;
