@@ -26,604 +26,268 @@
 <body>
     <main>        
         <section class="dash dash--logged-in u-wrap">
-            <div class="challenge challenge--personal">
-               <h3 class="title u-mar-b__tiny"></h3>              
-               <table class="challenge__table u-mar-b__huge">
-                    <thead>
-                        <tr>     
-                            <th></th>                      
-                            <th>Challenge</th>
-                            <th>Unit</th>
-                            <th>Progress</th>         
-                            <th>&nbsp;</th>                 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php 
-                            $select_challenge_string = "SELECT * FROM challenges_personal WHERE id = $challenge_id";
-                            $select_challenge_query = mysqli_query($connection, $select_challenge_string);
-                              
-                                while($row = mysqli_fetch_assoc($select_challenge_query)){
-                                    $challenge_id = $row['id'];
-                                    $challenge_title = $row['title'];
-                                    $challenge_description = $row['description'];
-                                    $challenge_dashboard_icon = $row['dashboard_icon'];
-                                    $challenge_units = $row['units'];
-                                    $challenge_target = $row['target'];
-                                    $challenge_progress = $row['target_progress'];
-                                    $challenge_percentage = ($challenge_progress / $challenge_target) * 100;
-                                    $challenge_milestones = $row['milestones'];
-                                    $challenge_milestone_title_1 = $row['milestone_title_1'];
-                                    $challenge_milestone_sub_1 = $row['milestone_sub_1'];
-                                    $challenge_milestone_terms_1 = $row['milestone_terms_1'];
-                                    $challenge_milestone_image_1 = $row['milestone_image_1'];
-                                    $challenge_milestone_target_1 = $row['milestone_target_1'];
-                                    $challenge_milestone_title_2 = $row['milestone_title_2'];
-                                    $challenge_milestone_sub_2 = $row['milestone_sub_2'];
-                                    $challenge_milestone_terms_2 = $row['milestone_terms_2'];
-                                    $challenge_milestone_image_2 = $row['milestone_image_2'];
-                                    $challenge_milestone_target_2 = $row['milestone_target_2'];
-                                    $challenge_milestone_title_3 = $row['milestone_title_3'];
-                                    $challenge_milestone_sub_3 = $row['milestone_sub_3'];
-                                    $challenge_milestone_terms_3 = $row['milestone_terms_3'];
-                                    $challenge_milestone_image_3 = $row['milestone_image_3'];
-                                    $challenge_milestone_target_3 = $row['milestone_target_3'];
-                                    $challenge_milestone_title_4 = $row['milestone_title_4'];
-                                    $challenge_milestone_sub_4 = $row['milestone_sub_4'];
-                                    $challenge_milestone_terms_4 = $row['milestone_terms_4'];
-                                    $challenge_milestone_image_4 = $row['milestone_image_4'];
-                                    $challenge_milestone_target_4 = $row['milestone_target_4'];
-                            ?>
-                                    <tr>
-                                        <td style="width:6rem;"><img class="challenge__icon" src="../uploads/images/<?php echo $challenge_dashboard_icon ?>" alt=""></td>
-                                        <td><?php echo $challenge_title ?></td>
-                                        <td><?php echo $challenge_units ?></td>
-                                        <td><?php echo $challenge_percentage . '%'; ?></td>
-                                        <td><a id="<?php echo $challenge_id; ?>" class="challenge-btn"  href="javascript:;"><i class="fas fa-arrow-circle-right"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="challenge-info-<?php echo $challenge_id; ?>" colspan="5" style="display:none; position:relative;">
-                                            <div class="challenge__info-inner">
-                                                <div class="challenge__text">
-                                                    <h3 class="challenge__sub-title"><?php echo $challenge_description ?></h3>
-                                                    <h4 class="challenge__date-range">Challenge Active From *date range here*</h4>
-                                                    <p class="challenge__target-text">Target : <?php echo $challenge_units . "<span id='milestone-target'>" .  $challenge_target . "</span>"; ?></p>                                                    
-                                                </div>
+            <div class="challenge challenge--personal challenge--preview-page">
+               <h3 class="title u-mar-b__med">Challenge Preview:</h3>              
+               <div class="challenge-table__body">   
+                <?php 
+                    $select_challenge_string = "SELECT * FROM challenges_personal WHERE id = $challenge_id";
+                    $select_challenge_query = mysqli_query($connection, $select_challenge_string);
+                    if (mysqli_num_rows($select_challenge_query) > 0) {
+                        mysqli_num_rows($select_challenge_query);
+                        while($row = mysqli_fetch_assoc($select_challenge_query)){
+                            $challenge_id = $row['id'];
+                            $challenge_title = $row['title'];
+                            $challenge_description = $row['description'];
+                            $challenge_dashboard_icon = $row['dashboard_icon'];
+                            $challenge_units = $row['units'];
+                            $challenge_target = $row['target'];
+                            $challenge_progress = $row['target_progress'];
+                            $challenge_percentage = ($challenge_progress / $challenge_target) * 100;
+                            $challenge_milestones = $row['milestones'];
+                            $challenge_milestone_title_1 = $row['milestone_title_1'];
+                            $challenge_milestone_sub_1 = $row['milestone_sub_1'];
+                            $challenge_milestone_terms_1 = $row['milestone_terms_1'];
+                            $challenge_milestone_image_1 = $row['milestone_image_1'];
+                            $challenge_milestone_target_1 = $row['milestone_target_1'];
+                            $challenge_milestone_title_2 = $row['milestone_title_2'];
+                            $challenge_milestone_sub_2 = $row['milestone_sub_2'];
+                            $challenge_milestone_terms_2 = $row['milestone_terms_2'];
+                            $challenge_milestone_image_2 = $row['milestone_image_2'];
+                            $challenge_milestone_target_2 = $row['milestone_target_2'];
+                            $challenge_milestone_title_3 = $row['milestone_title_3'];
+                            $challenge_milestone_sub_3 = $row['milestone_sub_3'];
+                            $challenge_milestone_terms_3 = $row['milestone_terms_3'];
+                            $challenge_milestone_image_3 = $row['milestone_image_3'];
+                            $challenge_milestone_target_3 = $row['milestone_target_3'];
+                            $challenge_milestone_title_4 = $row['milestone_title_4'];
+                            $challenge_milestone_sub_4 = $row['milestone_sub_4'];
+                            $challenge_milestone_terms_4 = $row['milestone_terms_4'];
+                            $challenge_milestone_image_4 = $row['milestone_image_4'];
+                            $challenge_milestone_target_4 = $row['milestone_target_4'];
+                ?>
 
-                                                <?php 
-                                                    switch($challenge_milestones) {
-                                                        case 1 :
-                                                ?>                                                    
-                                                            <div id="<?php echo $challenge_id; ?>" class="challenge__milestone challenge__milestone--1">
-                                                                <div class="challenge__step challenge__step--1"></div>
-                                                                <div class="challenge__step challenge__step--2"></div>
-                                                                <div class="challenge__step challenge__step--3"></div>
-                                                                <div class="challenge__step challenge__step--4"></div>
-                                                                <div class="challenge__step challenge__step--5"></div>
-                                                                <div class="challenge__step challenge__step--6"></div>
-                                                                <div class="challenge__step challenge__step--7"></div>
-                                                                <div class="challenge__step challenge__step--8"></div>
-                                                                <div class="challenge__step challenge__step--9"></div>
-                                                                <div class="challenge__goal challenge__goal--final challenge__step--milestone">
-                                                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_1;?>" alt="" class="challenge__milestone-image">                                                                    
-                                                                </div>
-                                                                <div class="challenge__celebration">
-                                                                    <canvas id="celebration-1-<?php echo $challenge_id; ?>"></canvas>
-                                                                    <script>
-                                                                        $(function(){
-                                                                            var confettiSettings = { 
-                                                                                target: 'celebration-1-<?php echo $challenge_id; ?>',
-                                                                                max : 20,
-                                                                                size : .8,
-                                                                                clock : 40, 
-                                                                                width : 300,
-                                                                                height: 220, 
-                                                                                props : [
-                                                                                    { "type": "svg", "src": "../assets/images/star.svg" }
-                                                                                ]
-                                                                            };    
-                                                                            var confetti = new ConfettiGenerator(confettiSettings);
-                                                                            confetti.render();
-                                                                        });                                                                    
-                                                                    </script>
-                                                                </div>
-                                                            </div>
-                                                            <script>
-                                                                $(function(){
-                                                                    var perComplete = <?php echo $challenge_percentage; ?>;
-                                                                    var curChallange = $('.challenge-info-' + <?php echo $challenge_id; ?> );
-                                                                    var steps;
 
-                                                                    if(perComplete >= 10 && perComplete < 20){
-                                                                         steps = 1;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 20 && perComplete < 30) {
-                                                                         steps = 2;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 30 && perComplete < 40) {
-                                                                         steps = 3;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 40 && perComplete < 50) {
-                                                                         steps = 4;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 50 && perComplete < 60) {
-                                                                         steps = 5;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 60 && perComplete < 70) {
-                                                                         steps = 6;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 70 && perComplete < 80) {
-                                                                         steps = 7;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 80 && perComplete < 90) {
-                                                                         steps = 8;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 90 && perComplete < 100) {
-                                                                         steps = 9;                                                                
-                                                                        stepCounter(steps); 
-                                                                    } else if (perComplete >= 100) {
-                                                                        steps = 10;        
-                                                                        stepCounter(steps);                                                                      
-                                                                    }
-                                                                
-                                                                    function stepCounter(stepAmmount) {
-                                                                        for(var i = 0; i < stepAmmount; i++) {
-                                                                            var stepNum = i + 1;
-                                                                          $(curChallange).find('.challenge__step--' + stepNum).addClass('challenge__step--active');                                                                         
-                                                                        }    
+                    <!-- Start of Challenge -->         
+                    <div class="challenge">                
+                        <div class="challenge__preview" style="border-top: solid 1px #c3c2c2;">
+                            <div class="challenge__preview-item challenge__preview-item--title">
+                                <span class="challenge__preview-item-title"><?php echo $challenge_title; ?></span>
+                            </div>
+                            <div class="challenge__preview-item challenge__preview-item--units">
+                                <span class="challenge__preview-item-title"><?php echo $challenge_units; ?></span>
+                            </div>
+                            <div class="challenge__preview-item challenge__preview-item--progress">
+                                <span class="challenge__preview-item-title"><?php echo $challenge_percentage . '%';?></span>
+                            </div>
+                            <div class="challenge__preview-item challenge__preview-item--btn-cont">
+                                <a class="challenge__btn" data-challenge-btn-id="<?php echo $challenge_id; ?>" href="javascript:;"><i  class="challenge__arrow-icon fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- 1 Milestone -->
+                        <div data-challenge-id="<?php echo $challenge_id; ?>" class="challenge__content">                 
+                            <div class="challenge__milestones-cont">
+                            <script>
+                                $(function(){
+                                    var cur = <?php echo $challenge_id; ?>;
+                                    var curSelector = $("div[data-challenge-id = '" + cur + "']");
 
-                                                                        if(stepAmmount >= 10){
-                                                                            $(curChallange).find($('.challenge__celebration')).addClass('challenge__celebration--active');
-                                                                        }                                                            
-                                                                    }                                                         
-                                                                
-                                                                });
+                                    var milestones = <?php echo $challenge_milestones;?>;
+                                    var progress = <?php echo $challenge_progress; ?>;
+                                    var overallPercentage = <?php echo $challenge_percentage; ?>;
+                             
+                                    var overallTarget = <? echo $challenge_target;?>;                           
 
-                                                            </script>
-                                                <?php
-                                                        
-                                                        break;   
-                                                        case 2 :
-                                                ?>                                                    
-                                                            <div id="challenge-<?php echo $challenge_id; ?>" class="challenge__milestone challenge__milestone--2">
-                                                                <div class="challenge__step challenge__step--1"></div>
-                                                                <div class="challenge__step challenge__step--2"></div>
-                                                                <div class="challenge__step challenge__step--3"></div>
-                                                                <div class="challenge__step challenge__step--4"></div>
-                                                                <div class="challenge__goal challenge__goal--1">
-                                                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_1;?>" alt="" class="challenge__milestone-image">
-                                                                    <p class="challenge__goal-text"><?php echo $challenge_units . $challenge_milestone_target_1;?></p>
-                                                                </div>
-                                                                <div class="challenge__step challenge__step--6"></div>
-                                                                <div class="challenge__step challenge__step--7"></div>
-                                                                <div class="challenge__step challenge__step--8"></div>
-                                                                <div class="challenge__step challenge__step--9"></div>
-                                                                <div class="challenge__goal challenge__goal--final challenge__goal--2">
-                                                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_2;?>" alt="" class="challenge__milestone-image">
-                                                                </div>
-                                                                <div class="challenge__celebration challenge__celebration--1">
-                                                                    <canvas id="celebration-1-<?php echo $challenge_id; ?>"></canvas>
-                                                                        <script>
-                                                                            $(function(){
-                                                                                var confettiSettings = { 
-                                                                                    target: 'celebration-1-<?php echo $challenge_id; ?>',
-                                                                                    size : .5,
-                                                                                    clock : 50, 
-                                                                                    width : 300,
-                                                                                    height: 220
-                                                                                };    
-                                                                                var confetti = new ConfettiGenerator(confettiSettings);
-                                                                                confetti.render();
-                                                                            });                                                                    
-                                                                        </script>
-                                                                    </div>
-                                                                <div class="challenge__celebration challenge__celebration--2">
-                                                                    <canvas id="celebration-2-<?php echo $challenge_id; ?>"></canvas>
-                                                                    <script>
-                                                                        $(function(){
-                                                                            var confettiSettings = { 
-                                                                                target: 'celebration-2-<?php echo $challenge_id; ?>',
-                                                                                max : 20,
-                                                                                size : .8,
-                                                                                clock : 40, 
-                                                                                width : 300,
-                                                                                height: 220, 
-                                                                                props : [
-                                                                                    { "type": "svg", "src": "../assets/images/star.svg" }
-                                                                                ]
-                                                                            };    
-                                                                            var confetti = new ConfettiGenerator(confettiSettings);
-                                                                            confetti.render();
-                                                                        });                                                                    
-                                                                    </script>
-                                                                </div>
-                                                            </div>
-                                                            <script>
-                                                                $(function(){
-                                                                    var perComplete, curChallange, celebration1, celebration2, active, steps;
+                                    var target1 = <?php echo $challenge_milestone_target_1;?>;
+                                    var target1Percentage = (target1 / overallTarget) * 100;
 
-                                                                    perComplete = <?php echo $challenge_percentage; ?>;
-                                                                    curChallange =  $('.challenge-info-' + <?php echo $challenge_id; ?> );
-                                                                    celebration1 =  $('.challenge__celebration--1');
-                                                                    celebration2 =  $('.challenge__celebration--2');
-                                                                    active = "challenge__celebration--active";                                                                
-                                                                  
-                                                                    if(perComplete >= 10 && perComplete < 20){
-                                                                        steps = 1;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 20 && perComplete < 30) {
-                                                                        steps = 2;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 30 && perComplete < 40) {
-                                                                        steps = 3;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 40 && perComplete < 50) {
-                                                                        steps = 4;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 50 && perComplete < 60) {
-                                                                        steps = 5;                                                                
-                                                                        stepCounter(steps); 
-                                                                    } else if (perComplete >= 60 && perComplete < 70) {
-                                                                        steps = 6;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 70 && perComplete < 80) {
-                                                                        steps = 7;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 80 && perComplete < 90) {
-                                                                        steps = 8;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 90 && perComplete < 100) {
-                                                                        steps = 9;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 100) {
-                                                                        steps = 10;        
-                                                                        stepCounter(steps);                                                                                                                    
-                                                                    }
+                                    var target2 = <?php echo $challenge_milestone_target_2;?>;
+                                    var target2Percentage = (target2 / overallTarget) * 100;
 
-                                                                
-                                                                    function stepCounter(stepAmmount) {
-                                                                        for(var i = 0; i < stepAmmount; i++) {
-                                                                            var stepNum = i + 1;
-                                                                            curChallange.find('.challenge__step--' + stepNum).addClass('challenge__step--active'); 
-                                                                        }         
+                                    var target3 = <?php echo $challenge_milestone_target_3;?>;
+                                    var target3Percentage = (target3 / overallTarget) * 100;
 
-                                                                        if(stepAmmount >= 5) {
-                                                                            $(curChallange).find(celebration1).addClass(active);
-                                                                        }
+                                    var selector =  $('div[data-challenge-id="<?php $challenge_id ?>"]');
+                                   
+                                    switch(milestones){
+                                        case 2: 
+                                            $(curSelector).find('.milestone--step-1').addClass('milestone--step-active').css('left',  target1Percentage + '%');
+                                            if(progress >= target1) {
+                                                $(curSelector).find('.milestone--step-1').find('.milestone__complete').addClass('milestone__complete--active');
+                                                $(curSelector).find('.milestone--step-1').find('.milestone__prize').addClass('milestone__prize--active');
+                                            }
+                                        break
+                                        case 3:
+                                            $(curSelector).find('.milestone--step-1').addClass('milestone--step-active').css('left',  target1Percentage + '%');
+                                            $(curSelector).find('.milestone--step-2').addClass('milestone--step-active').css('left',  target2Percentage + '%');
 
-                                                                        if(stepAmmount >= 10) {
-                                                                            $(curChallange).find(celebration2).addClass(active);
-                                                                        }
+                                            if(progress >= target1) {
+                                                $(curSelector).find('.milestone--step-1').find('.milestone__complete').addClass('milestone__complete--active');
+                                                $(curSelector).find('.milestone--step-1').find('.milestone__prize').addClass('milestone__prize--active');
+                                            }
 
-                                                                    }
+                                            if(progress >= target2) {
+                                                $(curSelector).find('.milestone--step-2').find('.milestone__complete').addClass('milestone__complete--active');
+                                                $(curSelector).find('.milestone--step-2').find('.milestone__prize').addClass('milestone__prize--active');
+                                            }
+                                        break
+                                        case 4:
+                                            $(curSelector).find('.milestone--step-1').addClass('milestone--step-active').css('left',  target1Percentage + '%');
+                                            $(curSelector).find('.milestone--step-2').addClass('milestone--step-active').css('left',  target2Percentage + '%');
+                                            $(curSelector).find('.milestone--step-3').addClass('milestone--step-active').css('left',  target3Percentage + '%');
 
-                                                                });
+                                            if(progress >= target1) {
+                                                $(curSelector).find('.milestone--step-1').find('.milestone__complete').addClass('milestone__complete--active');
+                                                $(curSelector).find('.milestone--step-1').find('.milestone__prize').addClass('milestone__prize--active');
+                                            }
 
-                                                            </script>
-                                                <?php
-                                                        
-                                                        break;
-                                                        case 3 :
-                                                        ?>                                                    
-                                                            <div class="challenge__milestone challenge__milestone--3">
-                                                                <div class="challenge__step challenge__step--1"></div>
-                                                                <div class="challenge__step challenge__step--2"></div>
-                                                                <div class="challenge__goal challenge__goal--1">
-                                                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_1;?>" alt="" class="challenge__milestone-image">
-                                                                    <p class="challenge__goal-text"><?php echo $challenge_units . $challenge_milestone_target_1;?></p>
-                                                                </div>
-                                                                <div class="challenge__step challenge__step--4"></div>
-                                                               
-                                                                <div class="challenge__goal challenge__goal--2">
-                                                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_2;?>" alt="" class="challenge__milestone-image">
-                                                                    <p class="challenge__goal-text"><?php echo $challenge_units . $challenge_milestone_target_2;?></p>
-                                                                </div>
-                                                                <div class="challenge__step challenge__step--7"></div>
-                                                                <div class="challenge__step challenge__step--8"></div>
-                                                                <div class="challenge__goal challenge__goal--final challenge__goal--3">
-                                                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_2;?>" alt="" class="challenge__milestone-image">
-                                                                    <p class="challenge__goal-text"><?php echo $challenge_units . $challenge_milestone_target_3;?></p>
-                                                                </div>
-                                                               
-                                                                <div class="challenge__celebration challenge__celebration--1">
-                                                                    <canvas id="celebration-1-<?php echo $challenge_id; ?>"></canvas>
-                                                                    <script>
-                                                                        $(function(){
-                                                                            var confettiSettings = { 
-                                                                                target: 'celebration-1-<?php echo $challenge_id; ?>',
-                                                                                size : .5,
-                                                                                clock : 50, 
-                                                                                width : 300,
-                                                                                height: 220
-                                                                            };    
-                                                                            var confetti = new ConfettiGenerator(confettiSettings);
-                                                                            confetti.render();
-                                                                        });                                                                    
-                                                                    </script>
-                                                                </div>
-                                                                <div class="challenge__celebration challenge__celebration--2">
-                                                                    <canvas id="celebration-2-<?php echo $challenge_id; ?>"></canvas>
-                                                                    <script>
-                                                                        $(function(){
-                                                                            var confettiSettings = { 
-                                                                                target: 'celebration-2-<?php echo $challenge_id; ?>',
-                                                                                size : .5,
-                                                                                clock : 50, 
-                                                                                width : 300,
-                                                                                height: 220
-                                                                            };    
-                                                                            var confetti = new ConfettiGenerator(confettiSettings);
-                                                                            confetti.render();
-                                                                        });                                                                    
-                                                                    </script>
-                                                                </div>
-                                                                <div class="challenge__celebration challenge__celebration--3">
-                                                                    <canvas id="celebration-3-<?php echo $challenge_id; ?>"></canvas>
-                                                                    <script>
-                                                                        $(function(){
-                                                                            var confettiSettings = { 
-                                                                                target: 'celebration-3-<?php echo $challenge_id; ?>',
-                                                                                max : 20,
-                                                                                size : .8,
-                                                                                clock : 40, 
-                                                                                width : 300,
-                                                                                height: 220, 
-                                                                                props : [
-                                                                                    { "type": "svg", "src": "../assets/images/star.svg" }
-                                                                                ]
-                                                                            };    
-                                                                            var confetti = new ConfettiGenerator(confettiSettings);
-                                                                            confetti.render();
-                                                                        });                                                                    
-                                                                    </script>
-                                                                </div>
-                                                            </div>
-                                                            <script>
-                                                                $(function(){
-                                                                    var perComplete, curChallange, celebration1, celebration2, active, steps;
+                                            if(progress >= target2) {
+                                                $(curSelector).find('.milestone--step-2').find('.milestone__complete').addClass('milestone__complete--active');
+                                                $(curSelector).find('.milestone--step-2').find('.milestone__prize').addClass('milestone__prize--active');
+                                            }
 
-                                                                    perComplete = <?php echo $challenge_percentage; ?>;
-                                                                    curChallange =  $('.challenge-info-' + <?php echo $challenge_id; ?> );
-                                                                    celebration1 =  $('.challenge__celebration--1');
-                                                                    celebration2 =  $('.challenge__celebration--2');
-                                                                    celebration3 =  $('.challenge__celebration--3');
-                                                                    active = "challenge__celebration--active";                                                                
-                                                                  
-                                                                    if(perComplete >= 11.11 && perComplete < 22.22){
-                                                                        steps = 1;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 22.22 && perComplete < 33.33) {
-                                                                        steps = 2;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 33.33 && perComplete < 44.44) {
-                                                                        steps = 3;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 44.44 && perComplete < 55.55) {
-                                                                        steps = 4;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 55.55 && perComplete < 66.66) {
-                                                                        steps = 5;                                                                
-                                                                        stepCounter(steps); 
-                                                                    } else if (perComplete >= 66.66 && perComplete < 77.77) {
-                                                                        steps = 6;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 77.77 && perComplete < 88.88) {
-                                                                        steps = 7;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 88.88 && perComplete < 99.99) {
-                                                                        steps = 8;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 100) {
-                                                                        steps = 10;        
-                                                                        stepCounter(steps);                                                                                                                    
-                                                                    }
+                                            if(progress >= target3) {
+                                                $(curSelector).find('.milestone--step-3').find('.milestone__complete').addClass('milestone__complete--active');
+                                                $(curSelector).find('.milestone--step-3').find('.milestone__prize').addClass('milestone__prize--active');
+                                            }                                           
+                                        break
+                                        default:                                                                                    
+                                    }
+                                    
+                                    $(curSelector).find('.progress-bar__inner').css('width',  overallPercentage + '%');         
 
-                                                                
-                                                                    function stepCounter(stepAmmount) {
-                                                                        for(var i = 0; i < stepAmmount; i++) {
-                                                                            var stepNum = i + 1;
-                                                                            curChallange.find('.challenge__step--' + stepNum).addClass('challenge__step--active'); 
-                                                                        }         
+                                    if(overallPercentage == 100) {                              
+                                        $(curSelector).find('.milestone--final').find('.milestone__complete').addClass('milestone__complete--active');
+                                        $(curSelector).find('.milestone--final').find('.milestone__prize').addClass('milestone__prize--active');
+                                    } 
+                                });
 
-                                                                        if(stepAmmount >= 3) {
-                                                                            $(curChallange).find(celebration1).addClass(active);
-                                                                        }
+                            </script>
 
-                                                                        if(stepAmmount >= 6) {
-                                                                            $(curChallange).find(celebration2).addClass(active);
-                                                                        }
+                            <!--Milestone Step 1-->
+                                <div class="milestone milestone--step milestone--step-1 ">
+                                    <div class="milestone__complete">
+                                        <canvas class="milestone__canvas" id="confetti-1-<?php echo $challenge_id; ?>"></canvas>
+                                        <script>
+                                            $(function(){
+                                                var confettiSettings = { 
+                                                    target: 'confetti-1-<?php echo $challenge_id; ?>',
+                                                    max : 20,
+                                                    size : 1.4,
+                                                    clock : 40, 
+                                                    width : 300,
+                                                    height: 300
+                                                };    
+                                                var confetti = new ConfettiGenerator(confettiSettings);
+                                                confetti.render();
+                                            });                                                                    
+                                        </script>
+                                    </div>
+                                    <img src="../uploads/images/prize.png" alt="Prize" class="milestone__prize">
+                                    <p class="milestone__title"><?php echo $challenge_milestone_title_1; ?></p>
+                                    <p class="milestone__sub"><?php echo $challenge_milestone_sub_1; ?></p>
+                                    <p class="milestone__target"><?php echo $challenge_milestone_target_1; ?></p>
+                                </div>
+                            <!--Milestone Step 2-->
+                                <div class="milestone milestone--step milestone--step-2">
+                                    <div class="milestone__complete">
+                                        <canvas class="milestone__canvas" id="confetti-2-<?php echo $challenge_id; ?>"></canvas>
+                                        <script>
+                                            $(function(){
+                                                var confettiSettings = { 
+                                                    target: 'confetti-2-<?php echo $challenge_id; ?>',
+                                                    max : 20,
+                                                    size : 1.4,
+                                                    clock : 40, 
+                                                    width : 300,
+                                                    height: 300
+                                                };    
+                                                var confetti = new ConfettiGenerator(confettiSettings);
+                                                confetti.render();
+                                            });                                                                    
+                                        </script>
+                                    </div>
+                                    <img src="../uploads/images/prize.png" alt="Prize" class="milestone__prize">
+                                    <p class="milestone__title"><?php echo $challenge_milestone_title_2; ?></p>
+                                    <p class="milestone__sub"><?php echo $challenge_milestone_sub_2; ?></p>
+                                    <p class="milestone__target"><?php echo $challenge_milestone_target_2; ?></p>
+                                </div>
+                            <!--Milestone Step 3-->
+                                <div class="milestone milestone--step milestone--step-3">
+                                    <div class="milestone__complete">
+                                        <canvas class="milestone__canvas" id="confetti-3-<?php echo $challenge_id; ?>"></canvas>
+                                        <script>
+                                            $(function(){
+                                                var confettiSettings = { 
+                                                    target: 'confetti-3-<?php echo $challenge_id; ?>',
+                                                    max : 20,
+                                                    size : 1.4,
+                                                    clock : 40, 
+                                                    width : 300,
+                                                    height: 300
+                                                };    
+                                                var confetti = new ConfettiGenerator(confettiSettings);
+                                                confetti.render();
+                                            });                                                                    
+                                        </script>
+                                    </div>
+                                    <img src="../uploads/images/prize.png" alt="Prize" class="milestone__prize">
+                                    <p class="milestone__title"><?php echo $challenge_milestone_title_3; ?></p>
+                                    <p class="milestone__sub"><?php echo $challenge_milestone_sub_3; ?></p>
+                                    <p class="milestone__target"><?php echo $challenge_milestone_target_3; ?></p>
+                                </div>
+                            </div>
+                              <!--Milestone Final Step-->
+                            <div class="milestone milestone--final">
+                                <div class="milestone__complete">
+                                    <canvas class="milestone__canvas" id="confetti-final-<?php echo $challenge_id; ?>"></canvas>
+                                    <script>
+                                        $(function(){
+                                            var confettiSettings = { 
+                                                target: 'confetti-final-<?php echo $challenge_id; ?>',
+                                                max : 20,
+                                                size : 1,
+                                                clock : 40, 
+                                                width : 300,
+                                                height: 300, 
+                                                props : [
+                                                    { "type": "svg", "src": "../assets/images/star.svg" }
+                                                ]
+                                            };    
+                                            var confetti = new ConfettiGenerator(confettiSettings);
+                                            confetti.render();
+                                        });                                                                    
+                                    </script>
+                                </div>
+                                <img src="../uploads/images/prize.png" alt="Prize" class="milestone__prize">
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-bar__inner"></div>
+                                <div class="progress-bar__marker progress-bar__marker--1"></div>
+                            </div>                            
+                        </div>  
+                        <!--end of 1 Milestone-->             
+                    </div> 
+                    <!-- End of Challenge -->
+                    <?php
+                        } 
+                    }else {
+                        echo "<script> location.replace('partner-challenges.php'); </script>"; 
+                    }                            
+                        ?>      
 
-                                                                        if(stepAmmount >= 9) {
-                                                                            $(curChallange).find(celebration3).addClass(active);
-                                                                        }
-
-                                                                    }
-                                                                });
-
-                                                            </script>
-                                                        <?php                                                                
-                                                        break;   
-                                                        case 4 :
-                                                        ?>                                                    
-                                                            <div class="challenge__milestone challenge__milestone--4">
-                                                                <div class="challenge__step challenge__step--1"></div>
-                                                                <div class="challenge__goal challenge__goal--1">
-                                                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_1;?>" alt="" class="challenge__milestone-image">
-                                                                    <p class="challenge__goal-text"><?php echo $challenge_units . $challenge_milestone_target_1; ?></p>
-                                                                </div>
-                                                                <div class="challenge__step challenge__step--3"></div>                                                               
-                                                                <div class="challenge__goal challenge__goal--2">
-                                                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_2;?>" alt="" class="challenge__milestone-image">
-                                                                    <p class="challenge__goal-text"><?php echo $challenge_units . $challenge_milestone_target_2; ?></p>
-                                                                </div>
-                                                                <div class="challenge__step challenge__step--5"></div>
-                                                                <div class="challenge__goal challenge__goal--3">
-                                                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_3;?>" alt="" class="challenge__milestone-image">
-                                                                    <p class="challenge__goal-text"><?php echo $challenge_units . $challenge_milestone_target_3; ?></p>
-                                                                </div>
-                                                                <div class="challenge__step challenge__step--7"></div>
-                                                                <div class="challenge__goal challenge__goal--final challenge__goal--3">
-                                                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_4;?>" alt="" class="challenge__milestone-image">
-                                                                    <p class="challenge__goal-text"><?php echo $challenge_units . $challenge_milestone_target_4; ?></p>
-                                                                </div>
-                                                               
-                                                                <div class="challenge__celebration challenge__celebration--1">
-                                                                    <canvas id="celebration-1-<?php echo $challenge_id; ?>"></canvas>
-                                                                    <script>
-                                                                        $(function(){
-                                                                            var confettiSettings = { 
-                                                                                target: 'celebration-1-<?php echo $challenge_id; ?>',
-                                                                                size : .5,
-                                                                                clock : 50, 
-                                                                                width : 300,
-                                                                                height: 220
-                                                                            };    
-                                                                            var confetti = new ConfettiGenerator(confettiSettings);
-                                                                            confetti.render();
-                                                                        });                                                                    
-                                                                    </script>
-                                                                </div>
-                                                                <div class="challenge__celebration challenge__celebration--2">
-                                                                    <canvas id="celebration-2-<?php echo $challenge_id; ?>"></canvas>
-                                                                    <script>
-                                                                        $(function(){
-                                                                            var confettiSettings = { 
-                                                                                target: 'celebration-2-<?php echo $challenge_id; ?>',
-                                                                                size : .5,
-                                                                                clock : 50, 
-                                                                                width : 300,
-                                                                                height: 220
-                                                                            };    
-                                                                            var confetti = new ConfettiGenerator(confettiSettings);
-                                                                            confetti.render();
-                                                                        });                                                                    
-                                                                    </script>
-                                                                </div>
-                                                                <div class="challenge__celebration challenge__celebration--3">
-                                                                    <canvas id="celebration-3-<?php echo $challenge_id; ?>"></canvas>
-                                                                    <script>
-                                                                        $(function(){
-                                                                            var confettiSettings = { 
-                                                                                target: 'celebration-3-<?php echo $challenge_id; ?>',
-                                                                                size : .5,
-                                                                                clock : 50, 
-                                                                                width : 300,
-                                                                                height: 220
-                                                                            };    
-                                                                            var confetti = new ConfettiGenerator(confettiSettings);
-                                                                            confetti.render();
-                                                                        });                                                                    
-                                                                    </script>
-                                                                </div>
-                                                                <div class="challenge__celebration challenge__celebration--4">
-                                                                    <canvas id="celebration-4-<?php echo $challenge_id; ?>"></canvas>
-                                                                    <script>
-                                                                        $(function(){
-                                                                            var confettiSettings = { 
-                                                                                target: 'celebration-4-<?php echo $challenge_id; ?>',
-                                                                                max : 20,
-                                                                                size : .8,
-                                                                                clock : 40, 
-                                                                                width : 300,
-                                                                                height: 220, 
-                                                                                props : [
-                                                                                    { "type": "svg", "src": "../assets/images/star.svg" }
-                                                                                ]
-                                                                            };    
-                                                                            var confetti = new ConfettiGenerator(confettiSettings);
-                                                                            confetti.render();
-                                                                        });                                                                    
-                                                                    </script>
-                                                                </div>
-                                                            </div>
-                                                            <script>
-                                                                $(function(){
-                                                                    var perComplete, curChallange, celebration1, celebration2, active, steps;
-
-                                                                    perComplete = <?php echo $challenge_percentage; ?>;
-                                                                    curChallange =  $('.challenge-info-' + <?php echo $challenge_id; ?> );
-                                                                    celebration1 =  $('.challenge__celebration--1');
-                                                                    celebration2 =  $('.challenge__celebration--2');
-                                                                    celebration3 =  $('.challenge__celebration--3');
-                                                                    celebration3 =  $('.challenge__celebration--4');
-                                                                    active = "challenge__celebration--active";                                                                
-                                                                  
-                                                                    if(perComplete >= 12.5 && perComplete < 25){
-                                                                        steps = 1;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 25 && perComplete < 37.5) {
-                                                                        steps = 2;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 37.5 && perComplete < 50) {
-                                                                        steps = 3;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 50 && perComplete < 62.5) {
-                                                                        steps = 4;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 62.5 && perComplete < 75) {
-                                                                        steps = 5;                                                                
-                                                                        stepCounter(steps); 
-                                                                    } else if (perComplete >= 75 && perComplete < 87.5) {
-                                                                        steps = 6;                                                                
-                                                                        stepCounter(steps);
-                                                                    } else if (perComplete >= 87.5 && perComplete < 100) {
-                                                                        steps = 7;                                                                
-                                                                        stepCounter(steps);
-                                                                    }  else if (perComplete >= 100) {
-                                                                        steps = 8;        
-                                                                        stepCounter(steps);                                                                                                                    
-                                                                    }
-
-                                                                
-                                                                    function stepCounter(stepAmmount) {
-                                                                        for(var i = 0; i < stepAmmount; i++) {
-                                                                            var stepNum = i + 1;
-                                                                            curChallange.find('.challenge__step--' + stepNum).addClass('challenge__step--active'); 
-                                                                        }         
-
-                                                                        if(stepAmmount >= 2) {
-                                                                            $(curChallange).find(celebration1).addClass(active);
-                                                                        }
-
-                                                                        if(stepAmmount >= 4) {
-                                                                            $(curChallange).find(celebration2).addClass(active);
-                                                                        }
-
-                                                                        if(stepAmmount >= 6) {
-                                                                            $(curChallange).find(celebration3).addClass(active);
-                                                                        }
-
-                                                                        if(stepAmmount >= 8) {
-                                                                            $(curChallange).find(celebration4).addClass(active);
-                                                                        }
-                                                                    }
-                                                                });
-
-                                                            </script>
-                                                        <?php                                                                
-                                                        break;                                                                          
-                                                    }                                                
-                                                ?>                                              
-                                            </div>
-                                        </td>
-                                    </tr>
-                        <?php
-                                }        
-                        ?>
-                    </tbody>
-               </table>
-              
-               <script>
-                    $('.challenge-btn').click(function(){
-                        var cur = this.id;
-                        $(this).find('i').toggleClass('u-rotate-90');
-
-                        $('.challenge-info-' + cur).stop().slideToggle();
-                    });
-               </script>            
+                </div>      
             </div>           
         </section>
     </main>
+    <script>
+        $(function(){
+            $('.challenge__btn').click(function(){
+                var cur = $(this).attr('data-challenge-btn-id');
+                $('div[data-challenge-id="' + cur + '"]').stop().slideToggle();
+                $(this).find('.challenge__arrow-icon').stop().toggleClass('challenge__arrow-icon--close');
+            });
+        });    
+    </script>
     
  
 <?php include "../includes/footer.php"; ?>
