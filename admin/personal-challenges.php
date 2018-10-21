@@ -131,7 +131,9 @@
             $to_clone_milestone_sub_4 = $row['milestone_sub_4'];                
             $to_clone_milestone_terms_4 = $row['milestone_terms_4'];                
             $to_clone_milestone_image_4 = $row['milestone_image_4'];                
-            $to_clone_milestone_target_4 = $row['milestone_target_4'];                
+            $to_clone_milestone_target_4 = $row['milestone_target_4'];     
+            $to_clone_start_date = $row['start_date'];          
+            $to_clone_end_date = $row['end_date'];          
         }
 
         $clone_string = "INSERT INTO challenges_personal(
@@ -165,7 +167,9 @@
             milestone_sub_4,
             milestone_terms_4,
             milestone_image_4,
-            milestone_target_4
+            milestone_target_4,
+            start_date,
+            end_date
         ) ";
         $clone_string .=  "VALUES(
             '{$to_clone_name}',
@@ -198,7 +202,10 @@
             '{$to_clone_milestone_sub_4}',
             '{$to_clone_milestone_terms_4}',
             '{$to_clone_milestone_image_4}',
-            '{$to_clone_milestone_target_4}'
+            '{$to_clone_milestone_target_4}',
+            '{$to_clone_start_date}',
+            '{$to_clone_end_date}'
+            
         ) ";       
         
         $clone_query = mysqli_query($connection, $clone_string);
@@ -206,7 +213,7 @@
             die('Query Failed ' . mysqli_error($connection));
         }
 
-        echo "<script> location.replace('personal-challenges.php'); </script>";         
+        // echo "<script> location.replace('personal-challenges.php'); </script>";         
     }    
 ?>
 <?php include 'includes/admin-footer.php'; ?> 

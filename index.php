@@ -49,15 +49,7 @@
                 </div>
                 <div class="country-select">
                     <a href="" class="country-select__logout-link">Logout</a>
-                    <a href="javascript:;" class="country-select__link">
-                        <i class="country-select__icon fas fa-chevron-down"></i>
-                        <p class="country-select__current">United Kingdom</p>
-                    </a>
-                  
-                    <ul class="country-select__dropdown">
-                        <li class="country-select__dropdown-item"><a href="javascript:;" class="country-select__dropdown-link">Slovenia</a></li>
-                        <li class="country-select__dropdown-item"><a href="javascript:;" class="country-select__dropdown-link">Spain</a></li>                                  
-                    </ul>
+                    <a href="admin-login.php" class="country-select__admin-link">Admin?</a>                    
                 </div>
             </div>
            
