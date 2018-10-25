@@ -108,7 +108,8 @@
                 $challenge_milestone_1_image = $_FILES['milestone_image_1']['name'];        
                 $challenge_milestone_1_image_temp = $_FILES['milestone_image_1']['tmp_name'];      
                 move_uploaded_file($challenge_milestone_1_image_temp, "../uploads/images/{$challenge_milestone_1_image}");    
-                $challenge_milestone_1_target = $_POST['milestone_target_1'];      
+                $challenge_milestone_1_target = $_POST['milestone_target_1'];  
+
                 $challenge_milestone_2_title = $_POST['milestone_title_2'];        
                 $challenge_milestone_2_sub_text = $_POST['milestone_sub_2'];        
                 $challenge_milestone_2_terms = $_FILES['milestone_terms_2']['name'];        
@@ -118,6 +119,7 @@
                 $challenge_milestone_2_image_temp = $_FILES['milestone_image_2']['tmp_name'];   
                 move_uploaded_file($challenge_milestone_2_image_temp, "../uploads/images/{$challenge_milestone_2_image}");      
                 $challenge_milestone_2_target = $_POST['milestone_target_2'];    
+                
                 $challenge_target = $challenge_milestone_1_target + $challenge_milestone_2_target;
 
                 $insert_challenge_string = "INSERT INTO challenges_partner(
@@ -177,7 +179,8 @@
                 $challenge_milestone_1_image = $_FILES['milestone_image_1']['name'];        
                 $challenge_milestone_1_image_temp = $_FILES['milestone_image_1']['tmp_name'];      
                 move_uploaded_file($challenge_milestone_1_image_temp, "../uploads/images/{$challenge_milestone_1_image}");       
-                $challenge_milestone_1_target = $_POST['milestone_target_1'];   
+                $challenge_milestone_1_target = $_POST['milestone_target_1'];  
+
                 $challenge_milestone_2_title = $_POST['milestone_title_2'];        
                 $challenge_milestone_2_sub_text = $_POST['milestone_sub_2'];        
                 $challenge_milestone_2_terms = $_FILES['milestone_terms_2']['name'];        
@@ -186,7 +189,8 @@
                 $challenge_milestone_2_image = $_FILES['milestone_image_2']['name'];        
                 $challenge_milestone_2_image_temp = $_FILES['milestone_image_2']['tmp_name'];   
                 move_uploaded_file($challenge_milestone_2_image_temp, "../uploads/images/{$challenge_milestone_2_image}");      
-                $challenge_milestone_2_target = $_POST['milestone_target_2'];    
+                $challenge_milestone_2_target = $_POST['milestone_target_2']; 
+
                 $challenge_milestone_3_title = $_POST['milestone_title_3'];        
                 $challenge_milestone_3_sub_text = $_POST['milestone_sub_3'];        
                 $challenge_milestone_3_terms = $_FILES['milestone_terms_3']['name'];        
@@ -196,6 +200,7 @@
                 $challenge_milestone_3_image_temp = $_FILES['milestone_image_3']['tmp_name'];    
                 move_uploaded_file($challenge_milestone_3_image_temp, "../uploads/images/{$challenge_milestone_3_image}");        
                 $challenge_milestone_3_target = $_POST['milestone_target_3']; 
+
                 $challenge_target = $challenge_milestone_1_target + $challenge_milestone_2_target + $challenge_milestone_3_target;
 
                 $insert_challenge_string = "INSERT INTO challenges_partner(
@@ -266,7 +271,8 @@
                 $challenge_milestone_1_image = $_FILES['milestone_image_1']['name'];        
                 $challenge_milestone_1_image_temp = $_FILES['milestone_image_1']['tmp_name'];      
                 move_uploaded_file($challenge_milestone_1_image_temp, "../uploads/images/{$challenge_milestone_1_image}");   
-                $challenge_milestone_1_target = $_POST['milestone_target_1'];       
+                $challenge_milestone_1_target = $_POST['milestone_target_1']; 
+
                 $challenge_milestone_2_title = $_POST['milestone_title_2'];        
                 $challenge_milestone_2_sub_text = $_POST['milestone_sub_2'];        
                 $challenge_milestone_2_terms = $_FILES['milestone_terms_2']['name'];        
@@ -275,7 +281,8 @@
                 $challenge_milestone_2_image = $_FILES['milestone_image_2']['name'];        
                 $challenge_milestone_2_image_temp = $_FILES['milestone_image_2']['tmp_name'];   
                 move_uploaded_file($challenge_milestone_2_image_temp, "../uploads/images/{$challenge_milestone_2_image}");   
-                $challenge_milestone_2_target = $_POST['milestone_target_2'];       
+                $challenge_milestone_2_target = $_POST['milestone_target_2'];  
+
                 $challenge_milestone_3_title = $_POST['milestone_title_3'];        
                 $challenge_milestone_3_sub_text = $_POST['milestone_sub_3'];        
                 $challenge_milestone_3_terms = $_FILES['milestone_terms_3']['name'];        
@@ -284,7 +291,8 @@
                 $challenge_milestone_3_image = $_FILES['milestone_image_3']['name'];        
                 $challenge_milestone_3_image_temp = $_FILES['milestone_image_3']['tmp_name'];    
                 move_uploaded_file($challenge_milestone_3_image_temp, "../uploads/images/{$challenge_milestone_3_image}");    
-                $challenge_milestone_3_target = $_POST['milestone_target_3'];         
+                $challenge_milestone_3_target = $_POST['milestone_target_3'];
+
                 $challenge_milestone_4_title = $_POST['milestone_title_4'];        
                 $challenge_milestone_4_sub_text = $_POST['milestone_sub_4'];        
                 $challenge_milestone_4_terms = $_FILES['milestone_terms_4']['name'];        
@@ -294,6 +302,7 @@
                 $challenge_milestone_4_image_temp = $_FILES['milestone_image_4']['tmp_name'];
                 move_uploaded_file($challenge_milestone_4_image_temp, "../uploads/images/{$challenge_milestone_4_image}");    
                 $challenge_milestone_4_target = $_POST['milestone_target_4']; 
+
                 $challenge_target = $challenge_milestone_1_target + $challenge_milestone_2_target + $challenge_milestone_3_target +  $challenge_milestone_4_target;
 
                 $insert_challenge_string = "INSERT INTO challenges_partner(
@@ -369,7 +378,8 @@
             if(!$insert_challenge_query){
                 die('Query Failed ' . mysqli_error($connection));
             } else {
-                echo "<script> location.replace('add-partner-challenge.php?challenge=added'); </script>";  
+                // echo "<script> location.replace('add-partner-challenge.php?challenge=added'); </script>";  
+                echo $insert_challenge_string;
             }   
         }
     }

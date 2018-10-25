@@ -99,9 +99,9 @@ if(isset($_GET['logout'])){
                             $challenge_description = $row['description'];
                             $challenge_dashboard_icon = $row['dashboard_icon'];
                             $challenge_units = $row['units'];
-                            $challenge_target = $row['target'];
+                          
                             $challenge_progress = $row['target_progress'];
-                            $challenge_percentage = ($challenge_progress / $challenge_target) * 100;
+                           
                             $challenge_milestones = $row['milestones'];
                             $challenge_milestone_title_1 = $row['milestone_title_1'];
                             $challenge_milestone_sub_1 = $row['milestone_sub_1'];
@@ -123,6 +123,8 @@ if(isset($_GET['logout'])){
                             $challenge_milestone_terms_4 = $row['milestone_terms_4'];
                             $challenge_milestone_image_4 = $row['milestone_image_4'];
                             $challenge_milestone_target_4 = $row['milestone_target_4'];
+                            $challenge_target = $challenge_milestone_target_4;
+                            $challenge_percentage = ($challenge_progress / $challenge_target) * 100;
                 ?>
 
 
