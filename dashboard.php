@@ -127,15 +127,27 @@ if(isset($_GET['logout'])){
                             switch($challenge_milestones) {
                                 case 1: $challenge_target = $row['milestone_target_1'];
                                         $final_milestone_image = $challenge_milestone_image_1;
+                                        $final_milestone_target = $challenge_milestone_target_1;
+                                        $final_milestone_title = $challenge_milestone_title_1;
+                                        $final_milestone_sub = $challenge_milestone_sub_1;
                                 break;
                                 case 2: $challenge_target = $row['milestone_target_2'];
                                         $final_milestone_image = $challenge_milestone_image_2;
+                                        $final_milestone_target = $challenge_milestone_target_2;
+                                        $final_milestone_title = $challenge_milestone_title_2;
+                                        $final_milestone_sub = $challenge_milestone_sub_2;
                                 break;
                                 case 3: $challenge_target = $row['milestone_target_3'];
                                         $final_milestone_image = $challenge_milestone_image_3;
+                                        $final_milestone_target = $challenge_milestone_target_3;
+                                        $final_milestone_title = $challenge_milestone_title_3;
+                                        $final_milestone_sub = $challenge_milestone_sub_3;
                                 break;
                                 case 4: $challenge_target = $row['milestone_target_4'];
                                         $final_milestone_image = $challenge_milestone_image_4;
+                                        $final_milestone_target = $challenge_milestone_target_4;
+                                        $final_milestone_title = $challenge_milestone_title_4;
+                                        $final_milestone_sub = $challenge_milestone_sub_4;
                                 break;
                             }
 
@@ -261,7 +273,7 @@ if(isset($_GET['logout'])){
                                     <img src="uploads/images/<?php echo $challenge_milestone_image_1 ?>" alt="Prize" class="milestone__prize">
                                     <p class="milestone__title"><?php echo $challenge_milestone_title_1; ?></p>
                                     <p class="milestone__sub"><?php echo $challenge_milestone_sub_1; ?></p>
-                                    <p class="milestone__target"><?php echo $challenge_milestone_target_1; ?></p>
+                                    <p class="milestone__target"><?php echo $challenge_units . $challenge_milestone_target_1; ?></p>
                                 </div>
                             <!--Milestone Step 2-->
                                 <div class="milestone milestone--step milestone--step-2">
@@ -285,7 +297,7 @@ if(isset($_GET['logout'])){
                                     <img src="uploads/images/<?php echo $challenge_milestone_image_2 ?>" alt="Prize" class="milestone__prize">
                                     <p class="milestone__title"><?php echo $challenge_milestone_title_2; ?></p>
                                     <p class="milestone__sub"><?php echo $challenge_milestone_sub_2; ?></p>
-                                    <p class="milestone__target"><?php echo $challenge_milestone_target_2; ?></p>
+                                    <p class="milestone__target"><?php echo $challenge_units . $challenge_milestone_target_2; ?></p>
                                 </div>
                             <!--Milestone Step 3-->
                                 <div class="milestone milestone--step milestone--step-3">
@@ -309,7 +321,7 @@ if(isset($_GET['logout'])){
                                     <img src="uploads/images/<?php echo $challenge_milestone_image_3 ?>" alt="Prize" class="milestone__prize">
                                     <p class="milestone__title"><?php echo $challenge_milestone_title_3; ?></p>
                                     <p class="milestone__sub"><?php echo $challenge_milestone_sub_3; ?></p>
-                                    <p class="milestone__target"><?php echo $challenge_milestone_target_3; ?></p>
+                                    <p class="milestone__target"><?php echo $challenge_units . $challenge_milestone_target_3; ?></p>
                                 </div>
                             </div>
                               <!--Milestone Final Step-->
@@ -334,7 +346,10 @@ if(isset($_GET['logout'])){
                                         });                                                                    
                                     </script>
                                 </div>
-                                <img src="uploads/images/<?php echo $final_milestone_image; ?>" alt="Prize" class="milestone__prize">
+                                <img src="uploads/images/<?php echo $final_milestone_image; ?>" alt="Prize" class="milestone__prize milestone__prize--final">
+                                <p class="milestone__title"><?php echo $final_milestone_title; ?></p>
+                                <p class="milestone__sub"><?php echo $final_milestone_sub; ?></p>
+                                <p class="milestone__target"><?php echo $challenge_units . $final_milestone_target; ?></p>
                             </div>
                             <div class="progress-bar">
                                 <div class="progress-bar__inner"></div>
@@ -409,15 +424,27 @@ if(isset($_GET['logout'])){
                             switch($challenge_milestones) {
                                 case 1: $challenge_target = $row['milestone_target_1'];
                                         $final_milestone_image = $challenge_milestone_image_1;
+                                        $final_milestone_target = $challenge_milestone_target_1;
+                                        $final_milestone_title = $challenge_milestone_title_1;
+                                        $final_milestone_sub = $challenge_milestone_sub_1;
                                 break;
                                 case 2: $challenge_target = $row['milestone_target_2'];
                                         $final_milestone_image = $challenge_milestone_image_2;
+                                        $final_milestone_target = $challenge_milestone_target_2;
+                                        $final_milestone_title = $challenge_milestone_title_2;
+                                        $final_milestone_sub = $challenge_milestone_sub_2;
                                 break;
                                 case 3: $challenge_target = $row['milestone_target_3'];
                                         $final_milestone_image = $challenge_milestone_image_3;
+                                        $final_milestone_target = $challenge_milestone_target_3;
+                                        $final_milestone_title = $challenge_milestone_title_3;
+                                        $final_milestone_sub = $challenge_milestone_sub_3;
                                 break;
                                 case 4: $challenge_target = $row['milestone_target_4'];
                                         $final_milestone_image = $challenge_milestone_image_4;
+                                        $final_milestone_target = $challenge_milestone_target_4;
+                                        $final_milestone_title = $challenge_milestone_title_4;
+                                        $final_milestone_sub = $challenge_milestone_sub_4;
                                 break;
                             }
 
@@ -543,7 +570,7 @@ if(isset($_GET['logout'])){
                                     <img src="uploads/images/<?php echo $challenge_milestone_image_1 ?>" alt="Prize" class="milestone__prize">
                                     <p class="milestone__title"><?php echo $challenge_milestone_title_1; ?></p>
                                     <p class="milestone__sub"><?php echo $challenge_milestone_sub_1; ?></p>
-                                    <p class="milestone__target"><?php echo $challenge_milestone_target_1; ?></p>
+                                    <p class="milestone__target"><?php echo $challenge_units . $challenge_milestone_target_1; ?></p>
                                 </div>
                             <!--Milestone Step 2-->
                                 <div class="milestone milestone--step milestone--step-2">
@@ -567,7 +594,7 @@ if(isset($_GET['logout'])){
                                     <img src="uploads/images/<?php echo $challenge_milestone_image_2 ?>" alt="Prize" class="milestone__prize">
                                     <p class="milestone__title"><?php echo $challenge_milestone_title_2; ?></p>
                                     <p class="milestone__sub"><?php echo $challenge_milestone_sub_2; ?></p>
-                                    <p class="milestone__target"><?php echo $challenge_milestone_target_2; ?></p>
+                                    <p class="milestone__target"><?php echo $challenge_units . $challenge_milestone_target_2; ?></p>
                                 </div>
                             <!--Milestone Step 3-->
                                 <div class="milestone milestone--step milestone--step-3">
@@ -591,7 +618,7 @@ if(isset($_GET['logout'])){
                                     <img src="uploads/images/<?php echo $challenge_milestone_image_3 ?>" alt="Prize" class="milestone__prize">
                                     <p class="milestone__title"><?php echo $challenge_milestone_title_3; ?></p>
                                     <p class="milestone__sub"><?php echo $challenge_milestone_sub_3; ?></p>
-                                    <p class="milestone__target"><?php echo $challenge_milestone_target_3; ?></p>
+                                    <p class="milestone__target"><?php echo $challenge_units . $challenge_milestone_target_3; ?></p>
                                 </div>
                             </div>
                               <!--Milestone Final Step-->
@@ -616,11 +643,15 @@ if(isset($_GET['logout'])){
                                         });                                                                    
                                     </script>
                                 </div>
-                                <img src="uploads/images/<?php echo $final_milestone_image ?>" alt="Prize" class="milestone__prize">
+                                <img src="uploads/images/<?php echo $final_milestone_image; ?>" alt="Prize" class="milestone__prize milestone__prize--final">
+                                <p class="milestone__title"><?php echo $final_milestone_title; ?></p>
+                                <p class="milestone__sub"><?php echo $final_milestone_sub; ?></p>
+                                <p class="milestone__target"><?php echo $challenge_units . $final_milestone_target; ?></p>
                             </div>
                             <div class="progress-bar">
                                 <div class="progress-bar__inner"></div>
                                 <div class="progress-bar__marker progress-bar__marker--1"></div>
+                              
                             </div>                            
                         </div>  
                         <!--end of 1 Milestone-->             

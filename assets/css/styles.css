@@ -359,6 +359,11 @@ a {
     font-family: "Open Sans", sans-serif; }
   .challenge-table__head-item--btn-cont, .challenge-table__preview-item--btn-cont {
     flex: 0 0 6.6rem; }
+  .challenge-table__body {
+    font-size: 2rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    line-height: 2; }
 
 .challenge--preview-page {
   padding-top: 6rem; }
@@ -409,7 +414,7 @@ a {
 
 .challenge__content {
   display: none;
-  padding: 8rem 0 8rem 2rem;
+  padding: 15rem 0 15rem 2rem;
   overflow: hidden;
   position: relative;
   border-right: solid 1px #c3c2c2;
@@ -428,13 +433,28 @@ a {
   position: relative;
   transition: all 1s; }
   .milestone__prize {
+    max-width: 8rem;
+    max-height: 8rem;
+    width: auto;
+    height: auto;
     display: block;
     margin: 0 auto .5rem;
     width: auto;
-    height: 100%;
+    height: auto;
     opacity: .3; }
     .milestone__prize--active {
       opacity: 1; }
+    .milestone__prize--final {
+      max-width: 20rem;
+      max-height: 100%;
+      height: auto; }
+  .milestone__title {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 2;
+    text-transform: uppercase; }
+  .milestone__sub {
+    margin-bottom: .5rem; }
   .milestone__title, .milestone__sub, .milestone__target {
     text-align: center; }
   .milestone--final {
@@ -442,19 +462,22 @@ a {
     max-height: 20rem;
     margin-left: auto; }
   .milestone--step {
-    max-width: 8rem;
-    max-height: 8rem;
     position: absolute;
     transform: translateX(-50%);
     opacity: 0;
     visibility: hidden; }
   .milestone--step-active {
     opacity: 1;
-    visibility: visible; }
+    visibility: visible;
+    height: 43%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; }
   .milestone--step-1 {
     top: 0; }
   .milestone--step-2 {
-    bottom: 1rem; }
+    bottom: 0;
+    justify-content: flex-start; }
   .milestone--step-3 {
     top: 0; }
   .milestone__complete {

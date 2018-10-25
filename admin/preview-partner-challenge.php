@@ -66,15 +66,27 @@
                             switch($challenge_milestones) {
                                 case 1: $challenge_target = $row['milestone_target_1'];
                                         $final_milestone_image = $challenge_milestone_image_1;
+                                        $final_milestone_target = $challenge_milestone_target_1;
+                                        $final_milestone_title = $challenge_milestone_title_1;
+                                        $final_milestone_sub = $challenge_milestone_sub_1;
                                 break;
                                 case 2: $challenge_target = $row['milestone_target_2'];
                                         $final_milestone_image = $challenge_milestone_image_2;
+                                        $final_milestone_target = $challenge_milestone_target_2;
+                                        $final_milestone_title = $challenge_milestone_title_2;
+                                        $final_milestone_sub = $challenge_milestone_sub_2;
                                 break;
                                 case 3: $challenge_target = $row['milestone_target_3'];
                                         $final_milestone_image = $challenge_milestone_image_3;
+                                        $final_milestone_target = $challenge_milestone_target_3;
+                                        $final_milestone_title = $challenge_milestone_title_3;
+                                        $final_milestone_sub = $challenge_milestone_sub_3;
                                 break;
                                 case 4: $challenge_target = $row['milestone_target_4'];
                                         $final_milestone_image = $challenge_milestone_image_4;
+                                        $final_milestone_target = $challenge_milestone_target_4;
+                                        $final_milestone_title = $challenge_milestone_title_4;
+                                        $final_milestone_sub = $challenge_milestone_sub_4;
                                 break;
                             }
 
@@ -274,7 +286,10 @@
                                         });                                                                    
                                     </script>
                                 </div>
-                                <img src="../uploads/images/<?php echo $final_milestone_image; ?>" alt="Prize" class="milestone__prize">
+                                <img src="uploads/images/<?php echo $final_milestone_image; ?>" alt="Prize" class="milestone__prize milestone__prize--final">
+                                <p class="milestone__title"><?php echo $final_milestone_title; ?></p>
+                                <p class="milestone__sub"><?php echo $final_milestone_sub; ?></p>
+                                <p class="milestone__target"><?php echo $challenge_units . $final_milestone_target; ?></p>
                             </div>
                             <div class="progress-bar">
                                 <div class="progress-bar__inner"></div>
