@@ -39,10 +39,8 @@
                             $challenge_title = $row['title'];
                             $challenge_description = $row['description'];
                             $challenge_dashboard_icon = $row['dashboard_icon'];
-                            $challenge_units = $row['units'];
-                            $challenge_target = $row['target'];
-                            $challenge_progress = $row['target_progress'];
-                            $challenge_percentage = ($challenge_progress / $challenge_target) * 100;
+                            $challenge_units = $row['units'];                           
+                            $challenge_progress = $row['target_progress'];                        
                             $challenge_milestones = $row['milestones'];
                             $challenge_milestone_title_1 = $row['milestone_title_1'];
                             $challenge_milestone_sub_1 = $row['milestone_sub_1'];
@@ -64,6 +62,25 @@
                             $challenge_milestone_terms_4 = $row['milestone_terms_4'];
                             $challenge_milestone_image_4 = $row['milestone_image_4'];
                             $challenge_milestone_target_4 = $row['milestone_target_4'];
+
+                            
+                            switch($challenge_milestones) {
+                                case 1: $challenge_target = $row['milestone_target_1'];
+                                        $final_milestone_image = $challenge_milestone_image_1;
+                                break;
+                                case 2: $challenge_target = $row['milestone_target_2'];
+                                        $final_milestone_image = $challenge_milestone_image_2;
+                                break;
+                                case 3: $challenge_target = $row['milestone_target_3'];
+                                        $final_milestone_image = $challenge_milestone_image_3;
+                                break;
+                                case 4: $challenge_target = $row['milestone_target_4'];
+                                        $final_milestone_image = $challenge_milestone_image_4;
+                                break;
+                            }
+
+                            $challenge_percentage = ($challenge_progress / $challenge_target) * 100;
+
                 ?>
 
 
@@ -182,7 +199,7 @@
                                             });                                                                    
                                         </script>
                                     </div>
-                                    <img src="../uploads/images/prize.png" alt="Prize" class="milestone__prize">
+                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_1 ?>" alt="Prize" class="milestone__prize">
                                     <p class="milestone__title"><?php echo $challenge_milestone_title_1; ?></p>
                                     <p class="milestone__sub"><?php echo $challenge_milestone_sub_1; ?></p>
                                     <p class="milestone__target"><?php echo $challenge_milestone_target_1; ?></p>
@@ -206,7 +223,7 @@
                                             });                                                                    
                                         </script>
                                     </div>
-                                    <img src="../uploads/images/prize.png" alt="Prize" class="milestone__prize">
+                                    <img src="<?php echo $challenge_milestone_image_2 ?>" alt="Prize" class="milestone__prize">
                                     <p class="milestone__title"><?php echo $challenge_milestone_title_2; ?></p>
                                     <p class="milestone__sub"><?php echo $challenge_milestone_sub_2; ?></p>
                                     <p class="milestone__target"><?php echo $challenge_milestone_target_2; ?></p>
@@ -230,7 +247,7 @@
                                             });                                                                    
                                         </script>
                                     </div>
-                                    <img src="../uploads/images/prize.png" alt="Prize" class="milestone__prize">
+                                    <img src="../uploads/images/<?php echo $challenge_milestone_image_3 ?>" alt="Prize" class="milestone__prize">
                                     <p class="milestone__title"><?php echo $challenge_milestone_title_3; ?></p>
                                     <p class="milestone__sub"><?php echo $challenge_milestone_sub_3; ?></p>
                                     <p class="milestone__target"><?php echo $challenge_milestone_target_3; ?></p>
@@ -258,7 +275,7 @@
                                         });                                                                    
                                     </script>
                                 </div>
-                                <img src="../uploads/images/prize.png" alt="Prize" class="milestone__prize">
+                                <img src="../uploads/images/<?php $challenge_percentage ?>" alt="Prize" class="milestone__prize">
                             </div>
                             <div class="progress-bar">
                                 <div class="progress-bar__inner"></div>
