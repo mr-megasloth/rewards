@@ -4,7 +4,7 @@
 
 
     <div class="dash__content">
-        <h1 class="title u-center">Welcome to the flyHigher Rewards Dashboard</h1>       
+        <h1 class="title u-center">Welcome to the flyHigher Reward Dashboard</h1>       
     </div>
 
 
