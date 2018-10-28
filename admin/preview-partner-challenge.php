@@ -286,7 +286,7 @@
                                         });                                                                    
                                     </script>
                                 </div>
-                                <img src="uploads/images/<?php echo $final_milestone_image; ?>" alt="Prize" class="milestone__prize milestone__prize--final">
+                                <img src="../uploads/images/<?php echo $final_milestone_image; ?>" alt="Prize" class="milestone__prize milestone__prize--final">
                                 <p class="milestone__title"><?php echo $final_milestone_title; ?></p>
                                 <p class="milestone__sub"><?php echo $final_milestone_sub; ?></p>
                                 <p class="milestone__target"><?php echo $challenge_units . $final_milestone_target; ?></p>
