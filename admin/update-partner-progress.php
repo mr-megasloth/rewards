@@ -1,4 +1,5 @@
 <?php include 'includes/admin-header.php'; ?>    
+
 <?php
     if(isset($_GET['c_id'])){
         //Get Values from the Database
@@ -28,7 +29,7 @@
 
         $update_challenge_progress_query = mysqli_query($connection, $update_challenge_progress_string);   
         
-        echo "<script> location.replace('update-partner-progress.php?c_id=$challenge_id'); </script>"; 
+        echo "<script> location.replace('update-partner-progress.php?c_id=$challenge_id&updated=true'); </script>"; 
     }
 
 ?>
@@ -37,6 +38,11 @@
 <?php include 'includes/admin-nav.php'; ?>
     <div class="dash__content" style="font-size:12px;">
         <h3 class="title u-mar-b__sml">Updating Progress For : <span style="text-decoration: underline; text-transform:uppercase;"><?php echo $cur_challenge_name;?></span></h3>
+        <?php 
+            if(isset($_GET['updated'])){
+               echo '<h3 class="success">The progess has been updated</h3>';
+            }         
+        ?>
         <form id="update-partner-progress-form" class="dash-form dash-form--admin" method="post" enctype="multipart/form-data">
             <div class="dash-form__form-group">
                     <label for="target_progress"  class="dash-form__label">Total Progress (<?php echo $cur_challenge_units; ?>)</label>

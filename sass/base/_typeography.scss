@@ -35,9 +35,11 @@ a {
 }
 
 .success {
-	font-size: 2rem;
-	font-weight: 300;
-	color: green;
+	font-family: $font-open-sans;
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: #00af00;
+	text-decoration: underline;
 	margin-bottom: 2rem;
 }
 
