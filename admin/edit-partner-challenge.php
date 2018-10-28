@@ -24,90 +24,81 @@
 
             $cur_challenge_participant_id = $row['participant_id'];            
             $cur_challenge_terms = $row['terms'];
-            $cur_challenge_units = $row['units'];
-            $cur_challenge_target = $row['target'];
+            $cur_challenge_units = $row['units'];            
             $cur_challenge_start_date = $row['start_date'];
             $cur_challenge_end_date = $row['end_date'];
             $cur_challenge_milestones = $row['milestones'];
             $cur_milestone_title_1 = '';
-            $cur_milestone_sub_1 = '';
-            $cur_milestone_terms_1 = '';
+            $cur_milestone_sub_1 = '';          
             $cur_milestone_image_1 = '';
             $cur_milestone_target_1 = '';
             $cur_milestone_title_2 = '';
-            $cur_milestone_sub_2 = '';
-            $cur_milestone_terms_2 = '';
+            $cur_milestone_sub_2 = '';          
             $cur_milestone_image_2 = '';
             $cur_milestone_target_2 = '';
             $cur_milestone_title_3 = '';
-            $cur_milestone_sub_3 = '';
-            $cur_milestone_terms_3 = '';
+            $cur_milestone_sub_3 = '';           
             $cur_milestone_image_3 = '';
             $cur_milestone_target_3 = '';
             $cur_milestone_title_4 = '';
-            $cur_milestone_sub_4 = '';
-            $cur_milestone_terms_4 = '';
+            $cur_milestone_sub_4 = '';          
             $cur_milestone_image_4 = '';
             $cur_milestone_target_4 = '';
 
             if($cur_challenge_milestones == 1){
                 $cur_milestone_title_1 = $row['milestone_title_1'];
-                $cur_milestone_sub_1 = $row['milestone_sub_1'];
-                $cur_milestone_terms_1 = $row['milestone_terms_1'];
+                $cur_milestone_sub_1 = $row['milestone_sub_1'];               
                 $cur_milestone_image_1 = $row['milestone_image_1'];
                 $cur_milestone_target_1 = $row['milestone_target_1'];         
             }
 
             if($cur_challenge_milestones == 2){
                 $cur_milestone_title_1 = $row['milestone_title_1'];
-                $cur_milestone_sub_1 = $row['milestone_sub_1'];
-                $cur_milestone_terms_1 = $row['milestone_terms_1'];
+                $cur_milestone_sub_1 = $row['milestone_sub_1'];               
                 $cur_milestone_image_1 = $row['milestone_image_1'];
                 $cur_milestone_target_1 = $row['milestone_target_1'];
+                
                 $cur_milestone_title_2 = $row['milestone_title_2'];
-                $cur_milestone_sub_2 = $row['milestone_sub_2'];
-                $cur_milestone_terms_2 = $row['milestone_terms_2'];
+                $cur_milestone_sub_2 = $row['milestone_sub_2'];                
                 $cur_milestone_image_2 = $row['milestone_image_2'];
                 $cur_milestone_target_2 = $row['milestone_target_2'];
             }
 
             if($cur_challenge_milestones == 3){
                 $cur_milestone_title_1 = $row['milestone_title_1'];
-                $cur_milestone_sub_1 = $row['milestone_sub_1'];
-                $cur_milestone_terms_1 = $row['milestone_terms_1'];
+                $cur_milestone_sub_1 = $row['milestone_sub_1'];               
                 $cur_milestone_image_1 = $row['milestone_image_1'];
                 $cur_milestone_target_1 = $row['milestone_target_1'];
+
                 $cur_milestone_title_2 = $row['milestone_title_2'];
-                $cur_milestone_sub_2 = $row['milestone_sub_2'];
-                $cur_milestone_terms_2 = $row['milestone_terms_2'];
+                $cur_milestone_sub_2 = $row['milestone_sub_2'];                
                 $cur_milestone_image_2 = $row['milestone_image_2'];
                 $cur_milestone_target_2 = $row['milestone_target_2'];
+
                 $cur_milestone_title_3 = $row['milestone_title_3'];
-                $cur_milestone_sub_3 = $row['milestone_sub_3'];
-                $cur_milestone_terms_3 = $row['milestone_terms_3'];
+                $cur_milestone_sub_3 = $row['milestone_sub_3'];               
                 $cur_milestone_image_3 = $row['milestone_image_3'];
                 $cur_milestone_target_3 = $row['milestone_target_3'];
             }
 
             if($cur_challenge_milestones == 4){
                 $cur_milestone_title_1 = $row['milestone_title_1'];
-                $cur_milestone_sub_1 = $row['milestone_sub_1'];
-                $cur_milestone_terms_1 = $row['milestone_terms_1'];
+                $cur_milestone_sub_1 = $row['milestone_sub_1'];               
                 $cur_milestone_image_1 = $row['milestone_image_1'];
                 $cur_milestone_target_1 = $row['milestone_target_1'];
+
                 $cur_milestone_title_2 = $row['milestone_title_2'];
-                $cur_milestone_sub_2 = $row['milestone_sub_2'];
-                $cur_milestone_terms_2 = $row['milestone_terms_2'];
+                $cur_milestone_sub_2 = $row['milestone_sub_2'];                
                 $cur_milestone_image_2 = $row['milestone_image_2'];
                 $cur_milestone_target_2 = $row['milestone_target_2'];
+
                 $cur_milestone_title_3 = $row['milestone_title_3'];
-                $cur_milestone_sub_3 = $row['milestone_sub_3'];
-                $cur_milestone_terms_3 = $row['milestone_terms_3'];
+                $cur_milestone_sub_3 = $row['milestone_sub_3'];               
                 $cur_milestone_image_3 = $row['milestone_image_3'];
-                $cur_milestone_target_3 = $row['milestone_target_3'];            
+                $cur_milestone_target_3 = $row['milestone_target_3']; 
+                           
                 $cur_milestone_title_4 = $row['milestone_title_4'];
-                $cur_milestone_sub_4 = $row['milestone_sub_4'];
-                $cur_milestone_terms_4 = $row['milestone_terms_4'];
+                $cur_milestone_sub_4 = $row['milestone_sub_4'];               
                 $cur_milestone_image_4 = $row['milestone_image_4'];
                 $cur_milestone_target_4 = $row['milestone_target_4'];
             }      
@@ -169,17 +160,7 @@
         switch($updated_milestones){
             case 1 : 
                 $updated_milestone_title_1 = $_POST['milestone_title_1'];
-                $updated_milestone_sub_1 = $_POST['milestone_sub_1'];
-                $updated_milestone_1_terms = $_FILES['milestone_terms_1']['name'];        
-                $updated_milestone_1_terms_temp = $_FILES['milestone_terms_1']['tmp_name'];      
-                move_uploaded_file($updated_milestone_1_terms_temp, "../uploads/terms/{$updated_milestone_1_terms}"); 
-                if(!$updated_milestone_1_terms){          
-                    $find_terms_string = "SELECT * FROM challenges_partner WHERE id =  $challenge_id";
-                    $find_terms_query = mysqli_query($connection, $find_terms_string);
-                    while($row = mysqli_fetch_assoc( $find_terms_query)){
-                        $updated_milestone_1_terms = $row['milestone_terms_1'];
-                    }            
-                } 
+                $updated_milestone_sub_1 = $_POST['milestone_sub_1'];               
                 $updated_milestone_1_image = $_FILES['milestone_image_1']['name'];        
                 $updated_milestone_1_image_temp = $_FILES['milestone_image_1']['tmp_name'];      
                 move_uploaded_file($updated_milestone_1_image_temp, "../uploads/images/{$updated_milestone_1_image}"); 
@@ -191,24 +172,11 @@
                     }            
                 }   
                 $updated_milestone_1_target = $_POST['milestone_target_1'];     
-                $updated_target = $updated_milestone_1_target;      
+             
             break;
             case 2 : 
-
-             
-
                 $updated_milestone_title_1 = $_POST['milestone_title_1'];
-                $updated_milestone_sub_1 = $_POST['milestone_sub_1'];
-                $updated_milestone_1_terms = $_FILES['milestone_terms_1']['name'];        
-                $updated_milestone_1_terms_temp = $_FILES['milestone_terms_1']['tmp_name'];      
-                move_uploaded_file($updated_milestone_1_terms_temp, "../uploads/terms/{$updated_milestone_1_terms}"); 
-                if(!$updated_milestone_1_terms){          
-                    $find_terms_string = "SELECT * FROM challenges_partner WHERE id =  $challenge_id";
-                    $find_terms_query = mysqli_query($connection, $find_terms_string);
-                    while($row = mysqli_fetch_assoc( $find_terms_query)){
-                        $updated_milestone_1_terms = $row['milestone_terms_1'];
-                    }            
-                } 
+                $updated_milestone_sub_1 = $_POST['milestone_sub_1'];               
                 $updated_milestone_1_image = $_FILES['milestone_image_1']['name'];        
                 $updated_milestone_1_image_temp = $_FILES['milestone_image_1']['tmp_name'];      
                 move_uploaded_file($updated_milestone_1_image_temp, "../uploads/images/{$updated_milestone_1_image}"); 
@@ -219,21 +187,10 @@
                         $updated_milestone_1_image = $row['milestone_image_1'];
                     }            
                 }   
-                $updated_milestone_1_target = $_POST['milestone_target_1'];     
-                  
+                $updated_milestone_1_target = $_POST['milestone_target_1']; 
                 
                 $updated_milestone_title_2 = $_POST['milestone_title_2'];
-                $updated_milestone_sub_2 = $_POST['milestone_sub_2'];
-                $updated_milestone_2_terms = $_FILES['milestone_terms_2']['name'];        
-                $updated_milestone_2_terms_temp = $_FILES['milestone_terms_2']['tmp_name'];      
-                move_uploaded_file($updated_milestone_2_terms_temp, "../uploads/terms/{$updated_milestone_2_terms}"); 
-                if(!$updated_milestone_2_terms){          
-                    $find_terms_string = "SELECT * FROM challenges_partner WHERE id =  $challenge_id";
-                    $find_terms_query = mysqli_query($connection, $find_terms_string);
-                    while($row = mysqli_fetch_assoc( $find_terms_query)){
-                        $updated_milestone_2_terms = $row['milestone_terms_2'];
-                    }            
-                } 
+                $updated_milestone_sub_2 = $_POST['milestone_sub_2'];               
                 $updated_milestone_2_image = $_FILES['milestone_image_2']['name'];        
                 $updated_milestone_2_image_temp = $_FILES['milestone_image_2']['tmp_name'];      
                 move_uploaded_file($updated_milestone_2_image_temp, "../uploads/images/{$updated_milestone_2_image}"); 
@@ -246,22 +203,12 @@
                 }   
                 $updated_milestone_2_target = $_POST['milestone_target_2']; 
 
-                $updated_target = $updated_milestone_1_target + $updated_milestone_2_target;    
+               
             break;
             case 3 : 
 
                 $updated_milestone_title_1 = $_POST['milestone_title_1'];
-                $updated_milestone_sub_1 = $_POST['milestone_sub_1'];
-                $updated_milestone_1_terms = $_FILES['milestone_terms_1']['name'];        
-                $updated_milestone_1_terms_temp = $_FILES['milestone_terms_1']['tmp_name'];      
-                move_uploaded_file($updated_milestone_1_terms_temp, "../uploads/terms/{$updated_milestone_1_terms}"); 
-                if(!$updated_milestone_1_terms){          
-                    $find_terms_string = "SELECT * FROM challenges_partner WHERE id =  $challenge_id";
-                    $find_terms_query = mysqli_query($connection, $find_terms_string);
-                    while($row = mysqli_fetch_assoc( $find_terms_query)){
-                        $updated_milestone_1_terms = $row['milestone_terms_1'];
-                    }            
-                } 
+                $updated_milestone_sub_1 = $_POST['milestone_sub_1'];                
                 $updated_milestone_1_image = $_FILES['milestone_image_1']['name'];        
                 $updated_milestone_1_image_temp = $_FILES['milestone_image_1']['tmp_name'];      
                 move_uploaded_file($updated_milestone_1_image_temp, "../uploads/images/{$updated_milestone_1_image}"); 
@@ -272,21 +219,10 @@
                         $updated_milestone_1_image = $row['milestone_image_1'];
                     }            
                 }   
-                $updated_milestone_1_target = $_POST['milestone_target_1'];     
-                  
+                $updated_milestone_1_target = $_POST['milestone_target_1']; 
                 
                 $updated_milestone_title_2 = $_POST['milestone_title_2'];
-                $updated_milestone_sub_2 = $_POST['milestone_sub_2'];
-                $updated_milestone_2_terms = $_FILES['milestone_terms_2']['name'];        
-                $updated_milestone_2_terms_temp = $_FILES['milestone_terms_2']['tmp_name'];      
-                move_uploaded_file($updated_milestone_2_terms_temp, "../uploads/terms/{$updated_milestone_2_terms}"); 
-                if(!$updated_milestone_2_terms){          
-                    $find_terms_string = "SELECT * FROM challenges_partner WHERE id =  $challenge_id";
-                    $find_terms_query = mysqli_query($connection, $find_terms_string);
-                    while($row = mysqli_fetch_assoc( $find_terms_query)){
-                        $updated_milestone_2_terms = $row['milestone_terms_2'];
-                    }            
-                } 
+                $updated_milestone_sub_2 = $_POST['milestone_sub_2'];                
                 $updated_milestone_2_image = $_FILES['milestone_image_2']['name'];        
                 $updated_milestone_2_image_temp = $_FILES['milestone_image_2']['tmp_name'];      
                 move_uploaded_file($updated_milestone_2_image_temp, "../uploads/images/{$updated_milestone_2_image}"); 
@@ -298,21 +234,9 @@
                     }            
                 }   
                 $updated_milestone_2_target = $_POST['milestone_target_2']; 
-
-                $updated_target = $updated_milestone_1_target + $updated_milestone_2_target;    
                 
                 $updated_milestone_title_3 = $_POST['milestone_title_3'];
-                $updated_milestone_sub_3 = $_POST['milestone_sub_3'];
-                $updated_milestone_3_terms = $_FILES['milestone_terms_3']['name'];        
-                $updated_milestone_3_terms_temp = $_FILES['milestone_terms_3']['tmp_name'];      
-                move_uploaded_file($updated_milestone_3_terms_temp, "../uploads/terms/{$updated_milestone_3_terms}"); 
-                if(!$updated_milestone_3_terms){          
-                    $find_terms_string = "SELECT * FROM challenges_partner WHERE id =  $challenge_id";
-                    $find_terms_query = mysqli_query($connection, $find_terms_string);
-                    while($row = mysqli_fetch_assoc( $find_terms_query)){
-                        $updated_milestone_3_terms = $row['milestone_terms_3'];
-                    }            
-                } 
+                $updated_milestone_sub_3 = $_POST['milestone_sub_3'];               
                 $updated_milestone_3_image = $_FILES['milestone_image_3']['name'];        
                 $updated_milestone_3_image_temp = $_FILES['milestone_image_3']['tmp_name'];      
                 move_uploaded_file($updated_milestone_3_image_temp, "../uploads/images/{$updated_milestone_3_image}"); 
@@ -324,23 +248,12 @@
                     }            
                 }   
                 $updated_milestone_3_target = $_POST['milestone_target_3']; 
-
-                $updated_target = $updated_milestone_1_target + $updated_milestone_2_target + $updated_milestone_3_target;    
+              
             break;
             case 4 : 
 
                 $updated_milestone_title_1 = $_POST['milestone_title_1'];
-                $updated_milestone_sub_1 = $_POST['milestone_sub_1'];
-                $updated_milestone_1_terms = $_FILES['milestone_terms_1']['name'];        
-                $updated_milestone_1_terms_temp = $_FILES['milestone_terms_1']['tmp_name'];      
-                move_uploaded_file($updated_milestone_1_terms_temp, "../uploads/terms/{$updated_milestone_1_terms}"); 
-                if(!$updated_milestone_1_terms){          
-                    $find_terms_string = "SELECT * FROM challenges_partner WHERE id =  $challenge_id";
-                    $find_terms_query = mysqli_query($connection, $find_terms_string);
-                    while($row = mysqli_fetch_assoc( $find_terms_query)){
-                        $updated_milestone_1_terms = $row['milestone_terms_1'];
-                    }            
-                } 
+                $updated_milestone_sub_1 = $_POST['milestone_sub_1'];                
                 $updated_milestone_1_image = $_FILES['milestone_image_1']['name'];        
                 $updated_milestone_1_image_temp = $_FILES['milestone_image_1']['tmp_name'];      
                 move_uploaded_file($updated_milestone_1_image_temp, "../uploads/images/{$updated_milestone_1_image}"); 
@@ -351,21 +264,10 @@
                         $updated_milestone_1_image = $row['milestone_image_1'];
                     }            
                 }   
-                $updated_milestone_1_target = $_POST['milestone_target_1'];     
-                  
+                $updated_milestone_1_target = $_POST['milestone_target_1']; 
                 
                 $updated_milestone_title_2 = $_POST['milestone_title_2'];
-                $updated_milestone_sub_2 = $_POST['milestone_sub_2'];
-                $updated_milestone_2_terms = $_FILES['milestone_terms_2']['name'];        
-                $updated_milestone_2_terms_temp = $_FILES['milestone_terms_2']['tmp_name'];      
-                move_uploaded_file($updated_milestone_2_terms_temp, "../uploads/terms/{$updated_milestone_2_terms}"); 
-                if(!$updated_milestone_2_terms){          
-                    $find_terms_string = "SELECT * FROM challenges_partner WHERE id =  $challenge_id";
-                    $find_terms_query = mysqli_query($connection, $find_terms_string);
-                    while($row = mysqli_fetch_assoc( $find_terms_query)){
-                        $updated_milestone_2_terms = $row['milestone_terms_2'];
-                    }            
-                } 
+                $updated_milestone_sub_2 = $_POST['milestone_sub_2'];                
                 $updated_milestone_2_image = $_FILES['milestone_image_2']['name'];        
                 $updated_milestone_2_image_temp = $_FILES['milestone_image_2']['tmp_name'];      
                 move_uploaded_file($updated_milestone_2_image_temp, "../uploads/images/{$updated_milestone_2_image}"); 
@@ -376,22 +278,10 @@
                         $updated_milestone_2_image = $row['milestone_image_2'];
                     }            
                 }   
-                $updated_milestone_2_target = $_POST['milestone_target_2']; 
-
-                $updated_target = $updated_milestone_1_target + $updated_milestone_2_target;    
+                $updated_milestone_2_target = $_POST['milestone_target_2'];   
                 
                 $updated_milestone_title_3 = $_POST['milestone_title_3'];
-                $updated_milestone_sub_3 = $_POST['milestone_sub_3'];
-                $updated_milestone_3_terms = $_FILES['milestone_terms_3']['name'];        
-                $updated_milestone_3_terms_temp = $_FILES['milestone_terms_3']['tmp_name'];      
-                move_uploaded_file($updated_milestone_3_terms_temp, "../uploads/terms/{$updated_milestone_3_terms}"); 
-                if(!$updated_milestone_3_terms){          
-                    $find_terms_string = "SELECT * FROM challenges_partner WHERE id =  $challenge_id";
-                    $find_terms_query = mysqli_query($connection, $find_terms_string);
-                    while($row = mysqli_fetch_assoc( $find_terms_query)){
-                        $updated_milestone_3_terms = $row['milestone_terms_3'];
-                    }            
-                } 
+                $updated_milestone_sub_3 = $_POST['milestone_sub_3'];               
                 $updated_milestone_3_image = $_FILES['milestone_image_3']['name'];        
                 $updated_milestone_3_image_temp = $_FILES['milestone_image_3']['tmp_name'];      
                 move_uploaded_file($updated_milestone_3_image_temp, "../uploads/images/{$updated_milestone_3_image}"); 
@@ -403,21 +293,10 @@
                     }            
                 }   
                 $updated_milestone_3_target = $_POST['milestone_target_3']; 
-
-                $updated_target = $updated_milestone_1_target + $updated_milestone_2_target + $updated_milestone_3_target;   
+                
 
                 $updated_milestone_title_4 = $_POST['milestone_title_4'];
-                $updated_milestone_sub_4 = $_POST['milestone_sub_4'];
-                $updated_milestone_4_terms = $_FILES['milestone_terms_4']['name'];        
-                $updated_milestone_4_terms_temp = $_FILES['milestone_terms_4']['tmp_name'];      
-                move_uploaded_file($updated_milestone_4_terms_temp, "../uploads/terms/{$updated_milestone_4_terms}"); 
-                if(!$updated_milestone_4_terms){          
-                    $find_terms_string = "SELECT * FROM challenges_partner WHERE id =  $challenge_id";
-                    $find_terms_query = mysqli_query($connection, $find_terms_string);
-                    while($row = mysqli_fetch_assoc( $find_terms_query)){
-                        $updated_milestone_4_terms = $row['milestone_terms_4'];
-                    }            
-                } 
+                $updated_milestone_sub_4 = $_POST['milestone_sub_4'];               
                 $updated_milestone_4_image = $_FILES['milestone_image_4']['name'];        
                 $updated_milestone_4_image_temp = $_FILES['milestone_image_4']['tmp_name'];      
                 move_uploaded_file($updated_milestone_4_image_temp, "../uploads/images/{$updated_milestone_4_image}"); 
@@ -430,7 +309,6 @@
                 }   
                 $updated_milestone_4_target = $_POST['milestone_target_4']; 
 
-                $updated_target = $updated_milestone_1_target + $updated_milestone_2_target + $updated_milestone_3_target + $updated_milestone_3_target;    
             break;
         }
 
@@ -447,8 +325,7 @@
             $update_challenge_string .= "participant_id = '{$participant_id}', ";        
             $update_challenge_string .= "dashboard_icon = '{$updated_dashboard_icon}', "; 
             $update_challenge_string .= "terms = '{$updated_terms}', "; 
-            $update_challenge_string .= "units = '{$updated_units}', "; 
-            $update_challenge_string .= "target = '{$updated_target}', "; 
+            $update_challenge_string .= "units = '{$updated_units}', ";            
             $update_challenge_string .= "milestones = '{$updated_milestones}', ";
             $update_challenge_string .= "start_date = '{$updated_start_date}', ";
             $update_challenge_string .= "end_date = '{$updated_end_date}' ";
@@ -456,59 +333,49 @@
                 switch($updated_milestones) {
                     case 1 : 
                         $update_challenge_string .= ", milestone_title_1 = '{$updated_milestone_title_1}', "; 
-                        $update_challenge_string .= "milestone_sub_1 = '{$updated_milestone_sub_1}', "; 
-                        $update_challenge_string .= "milestone_terms_1 = '{$updated_milestone_1_terms}', "; 
+                        $update_challenge_string .= "milestone_sub_1 = '{$updated_milestone_sub_1}', ";                        
                         $update_challenge_string .= "milestone_image_1 = '{$updated_milestone_1_image}', "; 
                         $update_challenge_string .= "milestone_target_1 = '{$updated_milestone_1_target}' ";
                     break;
                     case 2 : 
                         $update_challenge_string .= ", milestone_title_1 = '{$updated_milestone_title_1}', "; 
-                        $update_challenge_string .= "milestone_sub_1 = '{$updated_milestone_sub_1}', "; 
-                        $update_challenge_string .= "milestone_terms_1 = '{$updated_milestone_1_terms}', "; 
+                        $update_challenge_string .= "milestone_sub_1 = '{$updated_milestone_sub_1}', ";                        
                         $update_challenge_string .= "milestone_image_1 = '{$updated_milestone_1_image}', "; 
                         $update_challenge_string .= "milestone_target_1 = '{$updated_milestone_1_target}', ";
                         $update_challenge_string .= "milestone_title_2 = '{$updated_milestone_title_2}', "; 
-                        $update_challenge_string .= "milestone_sub_2 = '{$updated_milestone_sub_2}', "; 
-                        $update_challenge_string .= "milestone_terms_2 = '{$updated_milestone_2_terms}', "; 
+                        $update_challenge_string .= "milestone_sub_2 = '{$updated_milestone_sub_2}', ";                        
                         $update_challenge_string .= "milestone_image_2 = '{$updated_milestone_2_image}', "; 
                         $update_challenge_string .= "milestone_target_2 = '{$updated_milestone_2_target}' "; 
                     break;
                     case 3 : 
                         $update_challenge_string .= ", milestone_title_1 = '{$updated_milestone_title_1}', "; 
-                        $update_challenge_string .= "milestone_sub_1 = '{$updated_milestone_sub_1}', "; 
-                        $update_challenge_string .= "milestone_terms_1 = '{$updated_milestone_1_terms}', "; 
+                        $update_challenge_string .= "milestone_sub_1 = '{$updated_milestone_sub_1}', ";                        
                         $update_challenge_string .= "milestone_image_1 = '{$updated_milestone_1_image}', "; 
                         $update_challenge_string .= "milestone_target_1 = '{$updated_milestone_1_target}', ";
                         $update_challenge_string .= "milestone_title_2 = '{$updated_milestone_title_2}', "; 
-                        $update_challenge_string .= "milestone_sub_2 = '{$updated_milestone_sub_2}', "; 
-                        $update_challenge_string .= "milestone_terms_2 = '{$updated_milestone_2_terms}', "; 
+                        $update_challenge_string .= "milestone_sub_2 = '{$updated_milestone_sub_2}', ";                        
                         $update_challenge_string .= "milestone_image_2 = '{ $updated_milestone_2_image}', "; 
                         $update_challenge_string .= "milestone_target_2 = '{$updated_milestone_2_target}', "; 
                         $update_challenge_string .= "milestone_title_3 = '{$updated_milestone_title_3}', "; 
-                        $update_challenge_string .= "milestone_sub_3 = '{$updated_milestone_sub_3}', "; 
-                        $update_challenge_string .= "milestone_terms_3 = '{$updated_milestone_3_terms}', "; 
+                        $update_challenge_string .= "milestone_sub_3 = '{$updated_milestone_sub_3}', ";                       
                         $update_challenge_string .= "milestone_image_3 = '{$updated_milestone_3_image}', "; 
                         $update_challenge_string .= "milestone_target_3 = '{$updated_milestone_3_target}' "; 
                     break;
                     case 4: 
                         $update_challenge_string .= ", milestone_title_1 = '{$updated_milestone_title_1}', "; 
-                        $update_challenge_string .= "milestone_sub_1 = '{$updated_milestone_sub_1}', "; 
-                        $update_challenge_string .= "milestone_terms_1 = '{$updated_milestone_1_terms}', "; 
+                        $update_challenge_string .= "milestone_sub_1 = '{$updated_milestone_sub_1}', ";                        
                         $update_challenge_string .= "milestone_image_1 = '{$updated_milestone_1_image}', "; 
                         $update_challenge_string .= "milestone_target_1 = '{$updated_milestone_1_target}', ";
                         $update_challenge_string .= "milestone_title_2 = '{$updated_milestone_title_2}', "; 
-                        $update_challenge_string .= "milestone_sub_2 = '{$updated_milestone_sub_2}', "; 
-                        $update_challenge_string .= "milestone_terms_2 = '{$updated_milestone_2_terms}', "; 
+                        $update_challenge_string .= "milestone_sub_2 = '{$updated_milestone_sub_2}', ";                        
                         $update_challenge_string .= "milestone_image_2 = '{$updated_milestone_2_image}', "; 
                         $update_challenge_string .= "milestone_target_2 = '{$updated_milestone_2_target}', "; 
                         $update_challenge_string .= "milestone_title_3 = '{$updated_milestone_title_3}', "; 
-                        $update_challenge_string .= "milestone_sub_3 = '{$updated_milestone_sub_3}', "; 
-                        $update_challenge_string .= "milestone_terms_3 = '{$updated_milestone_3_terms}', "; 
+                        $update_challenge_string .= "milestone_sub_3 = '{$updated_milestone_sub_3}', ";                       
                         $update_challenge_string .= "milestone_image_3 = '{$updated_milestone_3_image}', "; 
                         $update_challenge_string .= "milestone_target_3 = '{$updated_milestone_3_target}', ";  
                         $update_challenge_string .= "milestone_title_4 = '{$updated_milestone_title_4}', "; 
-                        $update_challenge_string .= "milestone_sub_4 = '{$updated_milestone_sub_4}', "; 
-                        $update_challenge_string .= "milestone_terms_4 = '{$updated_milestone_4_terms}', "; 
+                        $update_challenge_string .= "milestone_sub_4 = '{$updated_milestone_sub_4}', ";                        
                         $update_challenge_string .= "milestone_image_4 = '{$updated_milestone_4_image}', "; 
                         $update_challenge_string .= "milestone_target_4 = '{$updated_milestone_4_target}' ";                 
                 }
@@ -520,23 +387,21 @@
                 die('Query Failed ' . mysqli_error($connection));
             }           
       
-            echo "<script> location.replace('edit-partner-challenge.php?c_id=$challenge_id'); </script>"; 
+            echo "<script> location.replace('edit-partner-challenge.php?c_id=$challenge_id&updated=true'); </script>"; 
         }
     }
-?>       
+?> 
 
-
-
-<?php 
-    if(isset($_GET['challenge'])){
-       echo '<h3 class="success">Your Challenge was added Edited</h3>';
-    }         
-?>
   
 <?php include 'includes/admin-info.php'; ?> 
 <?php include 'includes/admin-nav.php'; ?>
     <div class="dash__content" style="font-size:12px;">
         <h3 class="title u-mar-b__sml">Edit Challenge :  <span style="text-decoration: underline; text-transform:uppercase;"><?php echo $cur_challenge_name;?></span></h3>
+        <?php 
+            if(isset($_GET['updated'])){
+               echo '<h3 class="success">The challenge has been updated</h3>';
+            }         
+        ?>
         <form id="add-challenge-form" class="dash-form" method="post" enctype="multipart/form-data">
             <div class="dash-form__form-group">
                 <label for="challenge_country" class="dash-form__label">Country</label>
@@ -746,30 +611,23 @@
                     <label for="milestone_title_1"  class="dash-form__label">Milestone Title</label>
                     <input id="input-milestone-1-title" name="milestone_title_1" type="text" class="dash-form__input" value="<?php echo  $cur_milestone_title_1; ?>">
                 </div>
-                <p class="dash-form__error dash-form__error--milestone-1-title">Please add milestone title or remove milestone</p>
+                <p class="dash-form__error dash-form__error--milestone-1-title">Please add milestone title</p>
                 <div class="dash-form__form-group">
                     <label for="milestone_sub_1"  class="dash-form__label">Milestone Sub Text</label>
                     <input id="input-milestone-1-sub" name="milestone_sub_1" type="text" class="dash-form__input" value="<?php echo  $cur_milestone_sub_1; ?>">
                 </div>
-                <p class="dash-form__error dash-form__error--milestone-1-sub">Please add milestone sub or remove milestone</p>
-                <div class="dash-form__form-group">
-                    <label for="milestone_terms_1"  class="dash-form__label">Terms and Conditions</label>
-                    <input id="input-milestone-1-terms" name="milestone_terms_1" type="file" class="dash-form__input">
-                    <p class="dash-form__current-file"><?php echo   $cur_milestone_terms_1; ?></p>
-                    
-                </div>
-                <p class="dash-form__error dash-form__error--milestone-1-terms">Please add milestone terms or remove milestone</p>
+                <p class="dash-form__error dash-form__error--milestone-1-sub">Please add milestone sub</p>               
                 <div class="dash-form__form-group">
                     <label for="milestone_image_1"  class="dash-form__label">Milestone Image</label>
                     <img src="../uploads/images/<?php echo  $cur_milestone_image_1; ?>" alt="" class="dash-form__icon">
                     <input id="input-milestone-1-image" name="milestone_image_1" type="file" class="dash-form__input dash-form__input--file">
                 </div>    
-                <p class="dash-form__error dash-form__error--milestone-1-image">Please add milestone image or remove milestone</p>     
+                <p class="dash-form__error dash-form__error--milestone-1-image">Please add milestone image</p>     
                 <div class="dash-form__form-group">
                     <label for="milestone_target_1"  class="dash-form__label">Target</label>
                     <input id="input-milestone-1-target" name="milestone_target_1" type="number" class="dash-form__input" value="<?php echo  $cur_milestone_target_1; ?>">
                 </div>
-                <p class="dash-form__error dash-form__error--milestone-1-target">Please enter a target or remove milestone</p>      
+                <p class="dash-form__error dash-form__error--milestone-1-target">Please enter a target</p>      
             </div>
             <div id="milestone-2" class="dash-form__milestone">
                 <h6 class="sub-title">Milestone 2</h6>
@@ -782,13 +640,7 @@
                     <label for="milestone_sub_2"  class="dash-form__label">Milestone Sub Text</label>
                     <input id="input-milestone-2-sub" name="milestone_sub_2" type="text" class="dash-form__input" value="<?php echo  $cur_milestone_sub_2; ?>">
                 </div>
-                <p class="dash-form__error dash-form__error--milestone-2-sub">Please add milestone sub or remove milestone</p>
-                <div class="dash-form__form-group">
-                    <label for="milestone_terms_2"  class="dash-form__label">Terms and Conditions</label>
-                    <p class="dash-form__current-file"><?php echo   $cur_milestone_terms_2; ?></p>
-                    <input id="input-milestone-2-terms" name="milestone_terms_2" type="file" class="dash-form__input">
-                </div>
-                <p class="dash-form__error dash-form__error--milestone-2-terms">Please add milestone terms or remove milestone</p>
+                <p class="dash-form__error dash-form__error--milestone-2-sub">Please add milestone sub or remove milestone</p>              
                 <div class="dash-form__form-group">
                     <label for="milestone_image_2"  class="dash-form__label">Milestone Image</label>
                     <img src="../uploads/images/<?php echo  $cur_milestone_image_2; ?>" alt="" class="dash-form__icon">
@@ -812,13 +664,7 @@
                     <label for="milestone_sub_3"  class="dash-form__label">Milestone Sub Text</label>
                     <input id="input-milestone-3-sub" name="milestone_sub_3" type="text" class="dash-form__input"  value="<?php echo  $cur_milestone_sub_3; ?>">
                 </div>
-                <p class="dash-form__error dash-form__error--milestone-3-sub">Please add milestone sub or remove milestone</p>
-                <div class="dash-form__form-group">
-                    <label for="milestone_terms_3"  class="dash-form__label">Terms and Conditions</label>
-                    <p class="dash-form__current-file"><?php echo   $cur_milestone_terms_3; ?></p>
-                    <input id="input-milestone-3-terms" name="milestone_terms_3" type="file" class="dash-form__input">
-                </div>
-                <p class="dash-form__error dash-form__error--milestone-3-terms">Please add milestone terms or remove milestone</p>
+                <p class="dash-form__error dash-form__error--milestone-3-sub">Please add milestone sub or remove milestone</p>              
                 <div class="dash-form__form-group">
                     <label for="milestone_image_3"  class="dash-form__label">Milestone Image</label>
                     <img src="../uploads/images/<?php echo  $cur_milestone_image_3; ?>" alt="" class="dash-form__icon">
@@ -842,13 +688,7 @@
                     <label for="milestone_sub_4"  class="dash-form__label">Milestone Sub Text</label>
                     <input id="input-milestone-4-sub" name="milestone_sub_4" type="text" class="dash-form__input" value="<?php echo  $cur_milestone_sub_4; ?>">
                 </div>
-                <p class="dash-form__error dash-form__error--milestone-4-sub">Please add milestone sub or remove milestone</p>
-                <div class="dash-form__form-group">
-                    <label for="milestone_terms_4"  class="dash-form__label">Terms and Conditions</label>
-                    <p class="dash-form__current-file"><?php echo   $cur_milestone_terms_4; ?></p>
-                    <input id="input-milestone-4-terms" name="milestone_terms_4" type="file" class="dash-form__input">
-                </div>
-                <p class="dash-form__error dash-form__error--milestone-4-terms">Please add milestone terms or remove milestone</p>
+                <p class="dash-form__error dash-form__error--milestone-4-sub">Please add milestone sub or remove milestone</p>            
                 <div class="dash-form__form-group">
                     <label for="milestone_image_4"  class="dash-form__label">Milestone Image</label>
                     <img src="../uploads/images/<?php echo  $cur_milestone_image_4; ?>" alt="" class="dash-form__icon">
@@ -947,14 +787,7 @@
                             $('.dash-form__error--milestone-' + cur + '-sub').addClass('dash-form__error--active');
                         } else {
                             $('.dash-form__error--milestone-' + cur + '-sub').removeClass('dash-form__error--active');
-                        }
-
-                        if($('#input-milestone-' + cur + '-target').val() == 0){
-                            e.preventDefault();
-                            $('.dash-form__error--milestone-' + cur + '-target').addClass('dash-form__error--active');
-                        } else {
-                            $('.dash-form__error--milestone-' + cur + '-target').removeClass('dash-form__error--active');
-                        }
+                        }                        
                     }
 
                 });
