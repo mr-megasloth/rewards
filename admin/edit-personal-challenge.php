@@ -30,13 +30,14 @@ if(isset($_GET['c_id'])){
         while($partnerRow = mysqli_fetch_assoc($select_cur_partner_name_query)){
             $cur_challenge_partner_name = $partnerRow['name'];
         }
-
+        $challenge_start_date = date("d-m-Y", strtotime($row['start_date']));
+                
         $cur_challenge_participant = $row['participant_id'];
         $cur_challenge_terms = $row['terms'];
         $cur_challenge_units = $row['units'];
         $cur_challenge_target = $row['target'];
-        $cur_challenge_start_date = $row['start_date'];
-        $cur_challenge_end_date = $row['end_date'];
+        $cur_challenge_start_date = date("d-m-Y", strtotime($row['start_date']));
+        $cur_challenge_end_date = date("d-m-Y", strtotime($row['end_date']));
         $cur_challenge_milestones = $row['milestones'];
         $cur_milestone_title_1 = '';
         $cur_milestone_sub_1 = '';

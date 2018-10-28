@@ -25,8 +25,8 @@
             $cur_challenge_participant_id = $row['participant_id'];            
             $cur_challenge_terms = $row['terms'];
             $cur_challenge_units = $row['units'];            
-            $cur_challenge_start_date = $row['start_date'];
-            $cur_challenge_end_date = $row['end_date'];
+            $cur_challenge_start_date = date("d-m-Y", strtotime($row['start_date']));
+            $cur_challenge_end_date = date("d-m-Y", strtotime($row['end_date']));
             $cur_challenge_milestones = $row['milestones'];
             $cur_milestone_title_1 = '';
             $cur_milestone_sub_1 = '';          

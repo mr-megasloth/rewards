@@ -22,7 +22,7 @@
                 break;
 
                 case 3: 
-                $select_all_challenges_string = "SELECT * FROM challenges_partner AND end_date < now()";
+                $select_all_challenges_string = "SELECT * FROM challenges_partner WHERE end_date < now()";
                 break;
             }
                 $select_all_challenges_query = mysqli_query($connection, $select_all_challenges_string);

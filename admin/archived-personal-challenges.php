@@ -25,7 +25,7 @@
                     break;
     
                     case 3: 
-                    $select_all_challenges_string = "SELECT * FROM challenges_personal AND end_date < now()";
+                    $select_all_challenges_string = "SELECT * FROM challenges_personal WHERE end_date < now()";
                     break;
                 }
 
