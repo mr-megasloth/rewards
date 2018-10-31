@@ -152,6 +152,7 @@ if(isset($_GET['logout'])){
                             }
 
                             $challenge_percentage = ($challenge_progress / $challenge_target) * 100;
+                            $challenge_percentage = round($challenge_percentage, 1);
                 ?>
 
 
@@ -243,7 +244,7 @@ if(isset($_GET['logout'])){
                                     
                                     $(curSelector).find('.progress-bar__inner').css('width',  overallPercentage + '%');         
 
-                                    if(overallPercentage == 100) {                              
+                                    if(overallPercentage >= 100) {                              
                                         $(curSelector).find('.milestone--final').find('.milestone__complete').addClass('milestone__complete--active');
                                         $(curSelector).find('.milestone--final').find('.milestone__prize').addClass('milestone__prize--active');
                                     } 
@@ -449,6 +450,7 @@ if(isset($_GET['logout'])){
                             }
 
                             $challenge_percentage = ($challenge_progress / $challenge_target) * 100;
+                            $challenge_percentage = round($challenge_percentage, 1);
                 ?>
 
 
@@ -540,7 +542,7 @@ if(isset($_GET['logout'])){
                                     
                                     $(curSelector).find('.progress-bar__inner').css('width',  overallPercentage + '%');         
 
-                                    if(overallPercentage == 100) {                              
+                                    if(overallPercentage >= 100) {                              
                                         $(curSelector).find('.milestone--final').find('.milestone__complete').addClass('milestone__complete--active');
                                         $(curSelector).find('.milestone--final').find('.milestone__prize').addClass('milestone__prize--active');
                                     } 

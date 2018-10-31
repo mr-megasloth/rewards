@@ -91,6 +91,7 @@
                             }
 
                             $challenge_percentage = ($challenge_progress / $challenge_target) * 100;
+                            $challenge_percentage = round($challenge_percentage, 1);
                 ?>
 
 
