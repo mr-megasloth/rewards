@@ -59,9 +59,9 @@
                     </a>
                     <ul class="dash__sub-nav">
                         <li class="dash__nav-li dash__nav-li--sub"> 
-                            <a class="dash__nav-link dash__nav-link--indent" href="manage-admins.php" class="btn btn--admin">
+                            <a class="dash__nav-link dash__nav-link--indent" href="manage-users.php" class="btn btn--admin">
                                 <i class="dash__nav-icon fas fa-unlock"></i>
-                                <span class="dash__nav-link-text">Manage Admins</span>
+                                <span class="dash__nav-link-text">Manage Users</span>
                             </a>
                         </li>                                                                        
                     </ul>                  

@@ -25,6 +25,8 @@
 
                 if(!$update_user_role_query) {
                     die('Query Failed ' . mysqli_error($connection));                    
+                } else {
+                    echo "<script> location.replace('edit-user.php?u_id=$user_to_edit_id&updated=true'); </script>"; 
                 }
 
             }        
@@ -36,7 +38,13 @@
 
 
     <div class="dash__content">
-        <h3 class="title u-mar-b__huge">Edit Admin</h3>
+        <h3 class="title u-mar-b__med">Edit Admin</h3>
+        <?php
+            if(isset($_GET['updated'])){
+                echo '<h3 class="success">User role updated</h3>';
+            }
+        ?>
+
 
         <?php 
             

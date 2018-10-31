@@ -46,7 +46,7 @@
                     <td><?php echo $user_email ?></td>
                     <td><?php echo $user_country_name ?></td>
                     <td><?php echo $user_role_name ?></td>
-                    <td class="u-center"><a href="edit-admin.php?u_id=<?php echo $user_id; ?>"><i class="fas fa-edit"></i></a></td>                         
+                    <td class="u-center"><a href="edit-user.php?u_id=<?php echo $user_id; ?>"><i class="fas fa-edit"></i></a></td>                         
                 </tr>  
             <?php 
             }
