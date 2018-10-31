@@ -17,12 +17,6 @@
     }
 ?>
 <?php 
-
-    if(isset($_GET['updated']) == 'success'){
-        echo '<h3 class="success">The header was successfully edited</h3>';
-    }
-?>
-<?php 
     if(isset($_POST['update_header_submit'])){  
         $header_country = $_POST['header_country'];
         $header_title = $_POST['header_title'];
@@ -38,7 +32,7 @@
         } 
            
 
-            $update_header_string = $update_challenge_string = "UPDATE challenge_headers SET ";
+            $update_header_string = "UPDATE challenge_headers SET ";
             $update_header_string .= "title = '{$header_title}', "; 
             $update_header_string .= "body_text = '{$header_body_text}', "; 
             $update_header_string .= "image = '{$header_image}', "; 
@@ -60,6 +54,40 @@
 <?php include 'includes/admin-nav.php'; ?>
     <div class="dash__content" style="font-size:12px;">
         <h3 class="title u-mar-b__sml">Edit Header</h3>
+        <?php 
+            if(isset($_GET['updated']) == 'success'){
+                echo '<h3 class="success">The header was successfully edited</h3>';
+            }
+
+            //Reset Header Image
+            if(isset($_GET['delete_image'])) {
+          
+                $to_delete_country = $_GET['delete_image'];
+
+                $select_country_string = "SELECT * FROM countries WHERE id = $to_delete_country";
+                $select_country_query = mysqli_query($connection, $select_country_string);
+
+                
+                $delete_header_img_string = "UPDATE challenge_headers SET ";         
+                $delete_header_img_string .= "image = 'rewards-header.jpg' ";                 
+                $delete_header_img_string .= "WHERE country_id = {$to_delete_country} ";     
+
+                $delete_header_img_string;
+            
+                $delete_header_img_query = mysqli_query($connection, $delete_header_img_string);
+
+                if(!$delete_header_img_query){
+                    die('Query Failed' . mysqli_error($connection));
+                } else {
+                    echo "<script> location.replace('edit-header.php?image_reset=true'); </script>"; 
+                }
+
+            }
+
+            if(isset($_GET['image_reset'])){
+                echo '<h3 class="success">The default header image as been restored.</h3>';
+            }
+        ?>
         <form id="update-partner-progress-form" class="dash-form " method="post" enctype="multipart/form-data">
        
   
@@ -89,6 +117,9 @@
                               $country_label = $row['label']; 
                               echo "<option value='{$country_id}'>{$country_label}</option>";                              
                         }
+
+                       
+
                     } else {
                         //IF COUNTRY ADMIN
                         $select_user_country_string = "SELECT * FROM countries WHERE id = $user_country_id";
@@ -116,6 +147,7 @@
                         $('.dash-form__checkbox').prop('checked', false);
                         $('#partner-selector').prepend('<option class="dash_form__message--select-country">Please Select a Partner</option>');
                         $('.dash_form__message--select-country').attr("selected", true);
+                        $('.dash-form__header-img-delete').attr('href', 'edit-header.php?delete_image=' + selectedId);
                     });
                 });
             </script>      
@@ -132,7 +164,10 @@
                 <label for="header_image"  class="dash-form__label">Header Image</label>                
                 <input id="input-header-image"  name="header_image" type="file" class="dash-form__input dash-form__input--file">
             </div>
-            <img class="dash-form__header-img" src="../uploads/images/<?php echo $cur_header_image; ?>" alt="">
+            <div class="dash-form__header-img-cont">
+                <a href="edit-header.php?delete_image=<?php echo $user_country_id; ?>" class="dash-form__header-img-delete">&times;</a>
+                <img class="dash-form__header-img" src="../uploads/images/<?php echo $cur_header_image; ?>" alt="Header Image">
+            </div>
             <div class="dash-from__form-group dash-form__form-group--submit">
                 <input class="dash-form__submit" name="update_header_submit" value="Submit" type="submit">  
             </div>                        

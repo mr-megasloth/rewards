@@ -156,10 +156,32 @@
         }
     }
 
-    &__header-img {
+    &__header-img-cont {
+        position: relative;
         max-width: 50%;
         max-height: 30rem;
         margin-bottom: 2rem;
+    }
+
+
+    &__header-img {
+        height: 100%;
+        width: auto;
+    }
+
+    &__header-img-delete {
+        position: absolute;
+        top:0;
+        right:0;
+        font-size: 1.8rem;
+        color:$col-w;
+        background-color: red;
+        line-height: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2.5rem;
+        width:2.5rem;
     }
 }
 
