@@ -384,6 +384,16 @@ a {
   .challenge__preview-item:not(:last-child) {
     border-right: 1px solid #c3c2c2; }
 
+.challenge__preview-item--icon {
+  flex: 0 0 9rem;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .challenge__preview-item--icon img {
+    max-height: 8rem;
+    width: auto; }
+
 .challenge__preview-item--title {
   flex: 1 0 0;
   padding: 2rem; }

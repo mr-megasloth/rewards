@@ -159,6 +159,9 @@ if(isset($_GET['logout'])){
                     <!-- Start of Challenge -->         
                     <div class="challenge">                
                         <div class="challenge__preview">
+                            <div class="challenge__preview-item challenge__preview-item--icon">
+                                <img src="uploads/images/<?php echo $challenge_dashboard_icon; ?>" alt="Dashboard Icon" class="challenge__preview-item-icon">
+                            </div>
                             <div class="challenge__preview-item challenge__preview-item--title">
                                 <span class="challenge__preview-item-title"><?php echo $challenge_title; ?></span>
                             </div>
@@ -457,6 +460,9 @@ if(isset($_GET['logout'])){
                     <!-- Start of Challenge -->         
                     <div class="challenge">                
                         <div class="challenge__preview">
+                            <div class="challenge__preview-item challenge__preview-item--icon">
+                                <img src="uploads/images/<?php echo $challenge_dashboard_icon; ?>" alt="Dashboard Icon" class="challenge__preview-item-icon">
+                            </div>
                             <div class="challenge__preview-item challenge__preview-item--title">
                                 <span class="challenge__preview-item-title"><?php echo $challenge_title; ?></span>
                             </div>
@@ -464,7 +470,7 @@ if(isset($_GET['logout'])){
                                 <span class="challenge__preview-item-title"><?php echo $challenge_units; ?></span>
                             </div>
                             <div class="challenge__preview-item challenge__preview-item--progress">
-                                <span class="challenge__preview-item-title"><?php echo $challenge_percentage . '%';?></span>
+                                <span class="challenge__preview-item-title"><?php echo $challenge_percentage . '%';?></span>                               
                             </div>
                             <div class="challenge__preview-item challenge__preview-item--btn-cont">
                                 <a class="challenge__btn" data-challenge-btn-id="<?php echo $challenge_id; ?>" href="javascript:;"><i  class="challenge__arrow-icon fas fa-arrow-circle-right"></i></a>

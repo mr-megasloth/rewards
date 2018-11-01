@@ -98,6 +98,9 @@
                     <!-- Start of Challenge -->         
                     <div class="challenge">                
                         <div class="challenge__preview" style="border-top: solid 1px #c3c2c2;">
+                            <div class="challenge__preview-item challenge__preview-item--icon">
+                                <img src="../uploads/images/<?php echo $challenge_dashboard_icon; ?>" alt="Dashboard Icon" class="challenge__preview-item-icon">
+                            </div>
                             <div class="challenge__preview-item challenge__preview-item--title">
                                 <span class="challenge__preview-item-title"><?php echo $challenge_title; ?></span>
                             </div>
