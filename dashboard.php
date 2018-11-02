@@ -405,23 +405,19 @@ if(isset($_GET['logout'])){
                             $challenge_progress = $row['target_progress'];                            
                             $challenge_milestones = $row['milestones'];
                             $challenge_milestone_title_1 = $row['milestone_title_1'];
-                            $challenge_milestone_sub_1 = $row['milestone_sub_1'];
-                            $challenge_milestone_terms_1 = $row['milestone_terms_1'];
+                            $challenge_milestone_sub_1 = $row['milestone_sub_1'];                         
                             $challenge_milestone_image_1 = $row['milestone_image_1'];
                             $challenge_milestone_target_1 = $row['milestone_target_1'];
                             $challenge_milestone_title_2 = $row['milestone_title_2'];
-                            $challenge_milestone_sub_2 = $row['milestone_sub_2'];
-                            $challenge_milestone_terms_2 = $row['milestone_terms_2'];
+                            $challenge_milestone_sub_2 = $row['milestone_sub_2'];                           
                             $challenge_milestone_image_2 = $row['milestone_image_2'];
                             $challenge_milestone_target_2 = $row['milestone_target_2'];
                             $challenge_milestone_title_3 = $row['milestone_title_3'];
-                            $challenge_milestone_sub_3 = $row['milestone_sub_3'];
-                            $challenge_milestone_terms_3 = $row['milestone_terms_3'];
+                            $challenge_milestone_sub_3 = $row['milestone_sub_3'];                           
                             $challenge_milestone_image_3 = $row['milestone_image_3'];
                             $challenge_milestone_target_3 = $row['milestone_target_3'];
                             $challenge_milestone_title_4 = $row['milestone_title_4'];
-                            $challenge_milestone_sub_4 = $row['milestone_sub_4'];
-                            $challenge_milestone_terms_4 = $row['milestone_terms_4'];
+                            $challenge_milestone_sub_4 = $row['milestone_sub_4'];                         
                             $challenge_milestone_image_4 = $row['milestone_image_4'];
                             $challenge_milestone_target_4 = $row['milestone_target_4'];
 
