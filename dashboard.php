@@ -2,7 +2,7 @@
 <?php session_start(); ?>
 <?php 
 if(isset($_SESSION['status'])){
-    $user_id =$_SESSION['id'];
+    $user_id = $_SESSION['id'];
     $user_name = $_SESSION['name'];
     $user_email = $_SESSION['email'];
     $user_country_id = $_SESSION['country_id'];
